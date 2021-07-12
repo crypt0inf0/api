@@ -62,7 +62,7 @@ paths:
     get:
       tags:
         - General
-      summary: Top leader's
+      summary: Top leaders
       responses:
         '200':
           description: Successful response
@@ -180,12 +180,8 @@ paths:
                       type: string
                       description: Pu
               examples: {}
-          headers:
-            header-0:
-              schema:
-                type: string
-              description: Return all top 13 leaders/miners
-      description: Get all top leaders
+          headers: {}
+      description: Get all top 13 leaders/miners
   '/accountPrice/{username}':
     get:
       tags:
@@ -470,11 +466,15 @@ paths:
                     description: Number of ms needed for 0.01 DTC to generate 1 vt
                   vtPerBurn:
                     type: number
-          headers:
-            header-0:
+            application/xml:
               schema:
-                type: string
-              description: 'Return avalon config '
+                type: object
+                properties: {}
+            multipart/form-data:
+              schema:
+                type: object
+                properties: {}
+          headers: {}
   /count:
     get:
       tags:
@@ -552,6 +552,9 @@ paths:
       tags:
         - General
       summary: Mine new block
+      servers:
+        - url: 'http://localhost:3001'
+          description: Your local avalon node
       responses:
         '200':
           description: Successful response
@@ -577,7 +580,7 @@ paths:
       summary: Add websocket peer to the node
       servers:
         - url: 'http://localhost:3001'
-          description: Add your node as a avalon peer
+          description: Your local avalon node
       requestBody:
         content: {}
       responses:
@@ -586,28 +589,48 @@ paths:
           content:
             application/json: {}
       description: Add your node to peer
-  /cacheb:
-    get:
-      tags:
-        - General
-      summary: Debugging cached blocks
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-      description: Debugging cached blocks
   /cache:
     get:
       tags:
         - General
       summary: Debugging cache object
+      servers:
+        - url: 'http://localhost:3001'
+          description: Your local avalon node
       responses:
         '200':
           description: Successful response
           content:
             application/json: {}
       description: Debugging cache object
+  /cacheb:
+    get:
+      tags:
+        - General
+      summary: Debugging cached blocks
+      servers:
+        - url: 'http://localhost:3001'
+          description: Your local avalon node
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+      description: Debugging cached blocks
+  /nextblock:
+    get:
+      tags:
+        - General
+      summary: Debugging consensus data
+      servers:
+        - url: 'http://localhost:3001'
+          description: Your local avalon node
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+      description: Debugging consensus data
   '/distributed/{username}':
     get:
       tags:
@@ -631,24 +654,17 @@ paths:
                   properties:
                     _id:
                       type: string
+                      description: Content id
                     name:
                       type: string
+                      description: Username/author/channal name
                     dist:
                       type: number
+                      description: Distributer name
                     ts:
                       type: number
+                      description: Timestamp
       description: List all the contant distributed by the user ie. This is like a hosting provider. Any users can become a distributer by providing your own IPFS
-  /nextblock:
-    get:
-      tags:
-        - General
-      summary: Debugging consensus data
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-      description: Debugging consensus data
   '/oembed/:url':
     get:
       tags:
