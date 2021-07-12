@@ -78,16 +78,19 @@ paths:
                   properties:
                     _id:
                       type: string
-                      description: Dtube user id
+                      description: User id
                     name:
                       type: string
-                      description: Dtube username/Channal name
+                      description: Username/Channal name
                     pub:
                       type: string
+                      description: Public key
                     balance:
                       type: number
+                      description: 'DTC Balance '
                     bw:
                       type: object
+                      description: Bandwidth
                       properties:
                         v:
                           type: number
@@ -95,6 +98,7 @@ paths:
                           type: number
                     vt:
                       type: object
+                      description: Amount of VT to spend on the forced vote
                       properties:
                         v:
                           type: number
@@ -111,16 +115,20 @@ paths:
                       type: number
                     approves:
                       type: array
+                      description: 'Users who appove currnet leader '
                       items:
                         type: object
                     node_appr:
                       type: number
                     follows:
                       type: array
+                      description: Followings
                       items:
                         type: object
+                        description: ''
                     followers:
                       type: array
+                      description: Followers
                       items:
                         type: object
                     keys:
@@ -140,6 +148,7 @@ paths:
                               type: object
                     json:
                       type: object
+                      description: A json object
                       properties:
                         node:
                           type: object
@@ -148,20 +157,28 @@ paths:
                           properties:
                             avatar:
                               type: string
+                              description: User profile pic url
                             cover_image:
                               type: string
+                              description: User profile cover url
                             about:
                               type: string
+                              description: User about section
                             location:
                               type: string
+                              description: User location
                             website:
                               type: string
+                              description: User website
                             steem:
                               type: string
+                              description: User steem id
                             hive:
                               type: string
+                              description: User hive id
                     pub_leader:
                       type: string
+                      description: Pu
               examples: {}
       description: Get all top leaders
   '/accountPrice/{username}':
@@ -187,127 +204,255 @@ paths:
           description: Successful response
           content:
             application/json:
-              examples: {}
+              examples:
+                example:
+                  value:
+                    accountPriceBase: 20000
+                    accountPriceCharMult: 4
+                    accountPriceChars: 5
+                    accountPriceMin: 200
+                    accountMaxLength: 50
+                    accountMinLength: 1
+                    allowedUsernameChars: abcdefghijklmnopqrstuvwxyz0123456789
+                    allowedUsernameCharsOnlyMiddle: '-.'
+                    allowRevotes: false
+                    b58Alphabet: 123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz
+                    block0ts: 1601477849000
+                    blockTime: 3000
+                    bwGrowth: 36000000
+                    bwMax: 64000
+                    consensusRounds: 2
+                    ecoBaseRent: 0.5
+                    ecoBlocks: 9600
+                    ecoClaimPrecision: 3
+                    ecoClaimTime: 604800000
+                    ecoPunishAuthor: true
+                    ecoPunishPercent: 0.5
+                    ecoRentStartTime: 86400000
+                    ecoRentEndTime: 302400000
+                    ecoRentPrecision: 6
+                    ecoStartRent: 0.75
+                    followsMax: 2000
+                    hotfix1: true
+                    jsonMaxBytes: 60000
+                    keyIdMaxLength: 25
+                    leaderReward: 1
+                    leaderRewardVT: 100
+                    leaders: 13
+                    leaderShufflePrecision: 6
+                    leaderMaxVotes: 5
+                    masterBalance: 10000000000
+                    masterFee: 9
+                    masterName: dtube
+                    masterPaysForUsernames: false
+                    masterPub: dTuBhkU6SUx9JEx1f4YEt34X9sC7QGso2dSrqE8eJyfz
+                    masterPubLeader: dTuBhkU6SUx9JEx1f4YEt34X9sC7QGso2dSrqE8eJyfz
+                    maxDrift: 200
+                    maxTxPerBlock: 20
+                    memoMaxLength: 250
+                    notifPurge: 3600
+                    notifPurgeAfter: 56
+                    notifMaxMentions: 10
+                    originHash: da5fe18d0844f1f97bf5a94e7780dec18b4ab015e32383ede77158e059bacbb2
+                    randomBytesLength: 32
+                    rewardPoolMin: 1
+                    rewardPoolMult: 5
+                    rewardPoolMaxShare: 0.1
+                    rewardPoolUsers: 30000
+                    tagMaxLength: 25
+                    tagMaxPerContent: 5
+                    tippedVotePrecision: 2
+                    tmpForceTs: true
+                    txExpirationTime: 60000
+                    txLimits:
+                      '14': 2
+                      '15': 2
+                      '19': 0
+                    vtGrowth: 360000000
+                    vtPerBurn: 44
               schema:
-                description: ''
+                description: 'Refer <a href="https://github.com/dtube/avalon/blob/f906e422db75cb95a755fef1747785250f8cd181/src/config.js">Config</a>'
                 type: object
                 properties:
                   accountPriceBase:
                     type: number
+                    description: Account basic price
                   accountPriceCharMult:
                     type: number
                   accountPriceChars:
                     type: number
                   accountPriceMin:
                     type: number
+                    description: Account minimum price
                   accountMaxLength:
                     type: number
+                    description: Username maximum length
+                    maximum: 50
                   accountMinLength:
                     type: number
+                    description: Account minimum length
+                    minimum: 1
                   allowedUsernameChars:
                     type: string
+                    description: Allowed username characters
+                    pattern: abcdefghijklmnopqrstuvwxyz0123456789
                   allowedUsernameCharsOnlyMiddle:
                     type: string
+                    pattern: '-.'
+                    description: Allowed middle username characters
                   allowRevotes:
                     type: boolean
+                    description: Allow people to vote multiple times on the same content
                   b58Alphabet:
                     type: string
+                    description: Base58 encoding alphabet
                   block0ts:
                     type: number
+                    description: 'Block #0 genesis timestamp'
                   blockTime:
                     type: number
+                    description: Block time in ms
                   bwGrowth:
                     type: number
+                    description: Number of ms needed for 0.01 DTC to generate 1 byte of bw
+                    example: +10 bytes per hour per DTC (3600 * 1000 * 100 / 10)
                   bwMax:
                     type: number
+                    description: Maximum bandwidth per account
                   consensusRounds:
                     type: number
+                    description: Number of rounds of consensus before block is valid (min 2)
                   ecoBaseRent:
                     type: number
+                    description: Base rentability of votes
                   ecoBlocks:
                     type: number
+                    description: Number of blocks from the past taken into consideration for econonomics
                   ecoClaimPrecision:
                     type: number
+                    description: Precision of the claimable amounts
                   ecoClaimTime:
                     type: number
+                    description: Tequired number of ms(time) before a vote reward can be claimed
                   ecoPunishAuthor:
                     type: boolean
+                    description: Vote rewards be altered by downvotes like other votes
                   ecoPunishPercent:
                     type: number
+                    description: Percentage of coins that are burnt when there are opposite votes with rewards
                   ecoRentStartTime:
                     type: number
+                    description: Number of ms before a vote reaches 100% rentability
                   ecoRentEndTime:
                     type: number
+                    description: Number of ms when a vote rentability starts going down
                   ecoRentPrecision:
                     type: number
                   ecoStartRent:
                     type: number
+                    description: Rentability of votes
                   followsMax:
                     type: number
+                    description: Maximum followers allowed per user
                   hotfix1:
                     type: boolean
                   jsonMaxBytes:
                     type: number
+                    description: |-
+                      Max size of a stringified json input (content / user profile)
+                      Best if kept slightly lower than bwMax
                   keyIdMaxLength:
                     type: number
+                    description: Max length of a key identifier
                   leaderReward:
                     type: number
+                    description: 'how many max leaders there can be, and how much tokens and VT they earn per "mined" block'
                   leaderRewardVT:
                     type: number
+                    description: ''
                   leaders:
                     type: number
+                    description: ''
                   leaderShufflePrecision:
                     type: number
+                    description: Leader pseudo random generator shuffle
                   leaderMaxVotes:
                     type: number
+                    description: Maximum number of leaders an account can vote for
                   masterBalance:
                     type: number
+                    description: '"Master" account starting stake (total starting supply)'
                   masterFee:
                     type: number
+                    description: |-
+                      Tokens distributed before master gets 1 free token printed.
+                        masterFee = 2 => <33% fee
+                        masterFee = 4 => <20% fee
+                        masterFee = 9 => <10% fee
+                        masterFee = 19 => <5% fee
                   masterName:
                     type: string
+                    description: init account username
                   masterPaysForUsernames:
                     type: boolean
+                    description: If false master can create accounts with usernames without burning tokens
                   masterPub:
                     type: string
+                    description: Master account public original key
                   masterPubLeader:
                     type: string
+                    description: Master account public leader key
                   maxDrift:
                     type: number
+                    description: Maximum time drift in ms before a block is invalid
                   maxTxPerBlock:
                     type: number
+                    description: Maximum number of transactions in a single block
                   memoMaxLength:
                     type: number
+                    description: Max length of a transfer memo
                   notifPurge:
                     type: number
+                    description: 'Time taken for a notification to get deleted, and how often the purge happens'
                   notifPurgeAfter:
                     type: number
                   notifMaxMentions:
                     type: number
+                    description: Maximum number of mentions triggering a notification
                   originHash:
                     type: string
+                    description: sha256sum hash of block 0
                   randomBytesLength:
                     type: number
+                    description: Random bytes to use for new key generation
                   rewardPoolMin:
                     type: number
+                    description: Minimum hourly reward pool
                   rewardPoolMult:
                     type: number
+                    description: Multiplier for the reward pool
                   rewardPoolMaxShare:
                     type: number
+                    description: Maximum share of the reward pool
                   rewardPoolUsers:
                     type: number
+                    description: Estimated number of active users on the network
                   tagMaxLength:
                     type: number
+                    description: Maximum length of tags
                   tagMaxPerContent:
                     type: number
                   tippedVotePrecision:
                     type: number
+                    description: Author tip percentage
                   tmpForceTs:
                     type: boolean
                   txExpirationTime:
                     type: number
+                    description: Transactions expire time
                   txLimits:
                     type: object
+                    description: 'Refer <a href="https://github.com/dtube/avalon/blob/f906e422db75cb95a755fef1747785250f8cd181/src/config.js#L114">Transactions limit</a> & <a href="https://github.com/dtube/avalon/blob/f906e422db75cb95a755fef1747785250f8cd181/src/transactions/index.js#L29">Tx Types</a> '
                     properties:
                       '14':
                         type: number
@@ -317,6 +462,7 @@ paths:
                         type: number
                   vtGrowth:
                     type: number
+                    description: Number of ms needed for 0.01 DTC to generate 1 vt
                   vtPerBurn:
                     type: number
   /count:
@@ -336,6 +482,7 @@ paths:
                 properties:
                   count:
                     type: number
+                    description: Current block number
   '/block/{block_num}':
     get:
       tags:
