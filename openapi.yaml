@@ -1,0 +1,1742 @@
+openapi: 3.0.0
+info:
+  title: Dtube
+  description: Avalon node http/https API endpoint for developers
+  version: 1.0.0
+servers:
+  - url: 'https://avalon.d.tube'
+    description: The production API server
+tags:
+  - name: General
+  - name: Auth
+  - name: User
+  - name: Transaction
+  - name: Posts
+components:
+  parameters:
+    username:
+      in: path
+      name: username
+      schema:
+        type: string
+      required: true
+      description: Enter username
+    usernames:
+      in: path
+      name: usernames
+      schema:
+        type: string
+      required: true
+      description: 'Enter multiple username seperated with comma(,)'
+    author:
+      in: path
+      name: author
+      schema:
+        type: string
+      required: true
+      description: Enter post author name
+    link:
+      in: path
+      name: link
+      schema:
+        type: string
+      required: true
+      description: Enter post link
+    block_num:
+      in: path
+      name: block_num
+      schema:
+        type: integer
+      required: true
+      description: Enter block number
+    video_id:
+      in: path
+      name: video_id
+      schema:
+        type: string
+      required: true
+      description: Enter video id
+  securitySchemes: {}
+paths:
+  /allminers:
+    get:
+      tags:
+        - General
+      summary: Top leader's
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                description: ''
+                minItems: 1
+                uniqueItems: true
+                items:
+                  type: object
+                  properties:
+                    _id:
+                      type: string
+                      description: Dtube user id
+                    name:
+                      type: string
+                      description: Dtube username/Channal name
+                    pub:
+                      type: string
+                    balance:
+                      type: number
+                    bw:
+                      type: object
+                      properties:
+                        v:
+                          type: number
+                        t:
+                          type: number
+                    vt:
+                      type: object
+                      properties:
+                        v:
+                          type: number
+                        t:
+                          type: number
+                    pr:
+                      type: object
+                      properties:
+                        v:
+                          type: number
+                        t:
+                          type: number
+                    uv:
+                      type: number
+                    approves:
+                      type: array
+                      items:
+                        type: object
+                    node_appr:
+                      type: number
+                    follows:
+                      type: array
+                      items:
+                        type: object
+                    followers:
+                      type: array
+                      items:
+                        type: object
+                    keys:
+                      type: array
+                      uniqueItems: true
+                      minItems: 1
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: string
+                          pub:
+                            type: string
+                          types:
+                            type: array
+                            items:
+                              type: object
+                    json:
+                      type: object
+                      properties:
+                        node:
+                          type: object
+                        profile:
+                          type: object
+                          properties:
+                            avatar:
+                              type: string
+                            cover_image:
+                              type: string
+                            about:
+                              type: string
+                            location:
+                              type: string
+                            website:
+                              type: string
+                            steem:
+                              type: string
+                            hive:
+                              type: string
+                    pub_leader:
+                      type: string
+              examples: {}
+      description: Get all top leaders
+  '/accountPrice/{username}':
+    get:
+      tags:
+        - General
+      summary: Username availability/Price
+      parameters:
+        - $ref: '#/components/parameters/username'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+      description: Return username availability/Price
+  /config:
+    get:
+      tags:
+        - General
+      summary: Avalon chain config object
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              examples: {}
+              schema:
+                description: ''
+                type: object
+                properties:
+                  accountPriceBase:
+                    type: number
+                  accountPriceCharMult:
+                    type: number
+                  accountPriceChars:
+                    type: number
+                  accountPriceMin:
+                    type: number
+                  accountMaxLength:
+                    type: number
+                  accountMinLength:
+                    type: number
+                  allowedUsernameChars:
+                    type: string
+                  allowedUsernameCharsOnlyMiddle:
+                    type: string
+                  allowRevotes:
+                    type: boolean
+                  b58Alphabet:
+                    type: string
+                  block0ts:
+                    type: number
+                  blockTime:
+                    type: number
+                  bwGrowth:
+                    type: number
+                  bwMax:
+                    type: number
+                  consensusRounds:
+                    type: number
+                  ecoBaseRent:
+                    type: number
+                  ecoBlocks:
+                    type: number
+                  ecoClaimPrecision:
+                    type: number
+                  ecoClaimTime:
+                    type: number
+                  ecoPunishAuthor:
+                    type: boolean
+                  ecoPunishPercent:
+                    type: number
+                  ecoRentStartTime:
+                    type: number
+                  ecoRentEndTime:
+                    type: number
+                  ecoRentPrecision:
+                    type: number
+                  ecoStartRent:
+                    type: number
+                  followsMax:
+                    type: number
+                  hotfix1:
+                    type: boolean
+                  jsonMaxBytes:
+                    type: number
+                  keyIdMaxLength:
+                    type: number
+                  leaderReward:
+                    type: number
+                  leaderRewardVT:
+                    type: number
+                  leaders:
+                    type: number
+                  leaderShufflePrecision:
+                    type: number
+                  leaderMaxVotes:
+                    type: number
+                  masterBalance:
+                    type: number
+                  masterFee:
+                    type: number
+                  masterName:
+                    type: string
+                  masterPaysForUsernames:
+                    type: boolean
+                  masterPub:
+                    type: string
+                  masterPubLeader:
+                    type: string
+                  maxDrift:
+                    type: number
+                  maxTxPerBlock:
+                    type: number
+                  memoMaxLength:
+                    type: number
+                  notifPurge:
+                    type: number
+                  notifPurgeAfter:
+                    type: number
+                  notifMaxMentions:
+                    type: number
+                  originHash:
+                    type: string
+                  randomBytesLength:
+                    type: number
+                  rewardPoolMin:
+                    type: number
+                  rewardPoolMult:
+                    type: number
+                  rewardPoolMaxShare:
+                    type: number
+                  rewardPoolUsers:
+                    type: number
+                  tagMaxLength:
+                    type: number
+                  tagMaxPerContent:
+                    type: number
+                  tippedVotePrecision:
+                    type: number
+                  tmpForceTs:
+                    type: boolean
+                  txExpirationTime:
+                    type: number
+                  txLimits:
+                    type: object
+                    properties:
+                      '14':
+                        type: number
+                      '15':
+                        type: number
+                      '19':
+                        type: number
+                  vtGrowth:
+                    type: number
+                  vtPerBurn:
+                    type: number
+  /count:
+    get:
+      tags:
+        - General
+      summary: Block height
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              examples: {}
+              schema:
+                description: ''
+                type: object
+                properties:
+                  count:
+                    type: number
+  '/block/{block_num}':
+    get:
+      tags:
+        - General
+      summary: Block info
+      parameters:
+        - $ref: '#/components/parameters/block_num'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              examples: {}
+              schema:
+                description: ''
+                type: object
+                properties:
+                  _id:
+                    type: number
+                  phash:
+                    type: string
+                  timestamp:
+                    type: number
+                  txs:
+                    type: array
+                    uniqueItems: true
+                    minItems: 1
+                    items:
+                      properties:
+                        type:
+                          type: number
+                        data:
+                          type: object
+                          properties:
+                            target:
+                              type: string
+                        sender:
+                          type: string
+                        ts:
+                          type: number
+                        hash:
+                          type: string
+                        signature:
+                          type: string
+                  miner:
+                    type: string
+                  dist:
+                    type: number
+                  hash:
+                    type: string
+                  signature:
+                    type: string
+  /mineBlock:
+    get:
+      tags:
+        - General
+      summary: Mine new block
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /peers:
+    get:
+      tags:
+        - General
+      summary: Peers
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              examples: {}
+  /addPeer:
+    post:
+      tags:
+        - General
+      summary: Add websocket peer to the node
+      servers:
+        - url: 'http://localhost:3001'
+          description: Add your node as a avalon peer
+      requestBody:
+        content: {}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /cacheb:
+    get:
+      tags:
+        - General
+      summary: Debugging cached blocks
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /cache:
+    get:
+      tags:
+        - General
+      summary: Debugging cache object
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  '/distributed/{username}':
+    get:
+      tags:
+        - General
+      summary: Distributed
+      parameters:
+        - $ref: '#/components/parameters/username'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              examples: {}
+              schema:
+                type: array
+                description: ''
+                minItems: 1
+                uniqueItems: true
+                items:
+                  type: object
+                  properties:
+                    _id:
+                      type: string
+                    name:
+                      type: string
+                    dist:
+                      type: number
+                    ts:
+                      type: number
+  /nextblock:
+    get:
+      tags:
+        - General
+      summary: Debugging consensus data
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  '/oembed/:url':
+    get:
+      tags:
+        - General
+      summary: Oembed
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  '/opengraph/:url':
+    get:
+      tags:
+        - General
+      summary: Opengraph
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /rewardPool:
+    get:
+      tags:
+        - General
+      summary: Economy data
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              examples: {}
+              schema:
+                description: ''
+                type: object
+                properties:
+                  burn:
+                    type: number
+                  dist:
+                    type: number
+                  votes:
+                    type: number
+                  theo:
+                    type: number
+                  avail:
+                    type: number
+  /newKeyPair:
+    get:
+      tags:
+        - Auth
+      summary: New key pair
+      servers:
+        - url: 'http://localhost:3001'
+          description: Your local avalon node
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  '/notifications/{username}':
+    get:
+      tags:
+        - User
+      summary: Notifications
+      parameters:
+        - $ref: '#/components/parameters/username'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              examples: {}
+              schema:
+                type: array
+                description: ''
+                minItems: 1
+                uniqueItems: true
+                items:
+                  type: object
+                  properties:
+                    _id:
+                      type: string
+                    u:
+                      type: string
+                    tx:
+                      type: object
+                      properties:
+                        type:
+                          type: number
+                        data:
+                          type: object
+                          properties:
+                            target:
+                              type: string
+                        sender:
+                          type: string
+                        ts:
+                          type: number
+                        hash:
+                          type: string
+                        signature:
+                          type: string
+                    ts:
+                      type: number
+  '/followers/{username}':
+    get:
+      tags:
+        - User
+      summary: Followers
+      parameters:
+        - $ref: '#/components/parameters/username'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                description: ''
+                minItems: 1
+                uniqueItems: true
+                items:
+                  type: object
+                  properties: {}
+  '/follows/{username}':
+    get:
+      tags:
+        - User
+      summary: Following
+      parameters:
+        - $ref: '#/components/parameters/username'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                description: ''
+                minItems: 1
+                uniqueItems: true
+                items:
+                  type: object
+                  properties: {}
+  '/account/{username}':
+    get:
+      tags:
+        - User
+      summary: User info
+      parameters:
+        - $ref: '#/components/parameters/username'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              examples: {}
+              schema:
+                description: ''
+                type: object
+                properties:
+                  _id:
+                    type: string
+                  name:
+                    type: string
+                  pub:
+                    type: string
+                  balance:
+                    type: number
+                  bw:
+                    type: object
+                    properties:
+                      v:
+                        type: number
+                      t:
+                        type: number
+                  vt:
+                    type: object
+                    properties:
+                      v:
+                        type: number
+                      t:
+                        type: number
+                  follows:
+                    type: array
+                    items:
+                      properties: {}
+                  followers:
+                    type: array
+                    items:
+                      properties: {}
+                  keys:
+                    type: array
+                    items:
+                      properties: {}
+                  created:
+                    type: object
+                    properties:
+                      by:
+                        type: string
+                      ts:
+                        type: number
+                  json:
+                    type: object
+                    properties:
+                      profile:
+                        type: object
+                        properties:
+                          avatar:
+                            type: string
+                          cover_image:
+                            type: string
+                          about:
+                            type: string
+                          location:
+                            type: string
+                          website:
+                            type: string
+                          steem:
+                            type: string
+                          hive:
+                            type: string
+                  approves:
+                    type: array
+                    items:
+                      properties: {}
+                  pub_leader:
+                    type: string
+                  node_appr:
+                    type: number
+  '/accounts/{usernames}':
+    get:
+      tags:
+        - User
+      summary: Multiple user's info
+      parameters:
+        - $ref: '#/components/parameters/usernames'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  '/blog/{username}':
+    get:
+      tags:
+        - User
+      summary: Channel page
+      parameters:
+        - $ref: '#/components/parameters/username'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              examples: {}
+              schema:
+                type: array
+                description: ''
+                minItems: 1
+                uniqueItems: true
+                items:
+                  type: object
+                  properties:
+                    _id:
+                      type: string
+                    author:
+                      type: string
+                    link:
+                      type: string
+                    pa: {}
+                    pp: {}
+                    json:
+                      type: object
+                      properties:
+                        files:
+                          type: object
+                          properties:
+                            youtube:
+                              type: string
+                        title:
+                          type: string
+                        desc:
+                          type: string
+                        dur:
+                          type: string
+                        tag:
+                          type: string
+                        hide:
+                          type: number
+                        nsfw:
+                          type: number
+                        oc:
+                          type: number
+                        refs:
+                          type: array
+                          items:
+                            properties: {}
+                    child:
+                      type: array
+                      items:
+                        properties:
+                          '0':
+                            type: array
+                            uniqueItems: true
+                            items:
+                              properties: {}
+                    votes:
+                      type: array
+                      uniqueItems: true
+                      minItems: 1
+                      items:
+                        properties:
+                          u:
+                            type: string
+                          ts:
+                            type: number
+                          vt:
+                            type: number
+                          tip:
+                            type: number
+                          tag:
+                            type: string
+                          gross:
+                            type: number
+                          totalTip:
+                            type: number
+                          claimable:
+                            type: number
+                          claimed:
+                            type: number
+                    ts:
+                      type: number
+                    tags:
+                      type: object
+                      properties:
+                        onelovedtube:
+                          type: number
+                        dtube:
+                          type: number
+                    dist:
+                      type: number
+  '/blog/{username}/{author}/{link}':
+    get:
+      tags:
+        - User
+      summary: Get single post in detail
+      parameters:
+        - $ref: '#/components/parameters/username'
+        - $ref: '#/components/parameters/author'
+        - $ref: '#/components/parameters/link'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  '/history/{username}/0':
+    get:
+      tags:
+        - Transaction
+      summary: Recent transaction history
+      parameters:
+        - $ref: '#/components/parameters/username'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              examples: {}
+              schema:
+                type: array
+                description: ''
+                minItems: 1
+                uniqueItems: true
+                items:
+                  type: object
+                  properties:
+                    _id:
+                      type: number
+                    phash:
+                      type: string
+                    timestamp:
+                      type: number
+                    txs:
+                      type: array
+                      uniqueItems: true
+                      minItems: 1
+                      items:
+                        properties:
+                          type:
+                            type: number
+                          data:
+                            type: object
+                            properties:
+                              pub:
+                                type: string
+                              name:
+                                type: string
+                          sender:
+                            type: string
+                          ts:
+                            type: number
+                          hash:
+                            type: string
+                          signature:
+                            type: string
+                    miner:
+                      type: string
+                    dist:
+                      type: number
+                    hash:
+                      type: string
+                    signature:
+                      type: string
+  '/history/{author}/{block_num}':
+    get:
+      tags:
+        - Transaction
+      summary: Transaction history
+      parameters:
+        - $ref: '#/components/parameters/author'
+        - $ref: '#/components/parameters/block_num'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              examples:
+                Response Example:
+                  value: |-
+                    {
+                      "_id": {
+                        "type": "integer",
+                        "format": "int32"
+                      },
+                      "phash": {
+                        "type": "string"
+                      },
+                      "timestamp": {
+                        "type": "integer",
+                        "format": "int64"
+                      },
+                      "txs": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "integer",
+                              "format": "int32"
+                            },
+                            "data": {
+                              "type": "object",
+                              "properties": {
+                                "receiver": {
+                                  "type": "string"
+                                },
+                                "amount": {
+                                  "type": "integer",
+                                  "format": "int32"
+                                },
+                                "memo": {
+                                  "type": "string"
+                                }
+                              }
+                            },
+                            "sender": {
+                              "type": "string"
+                            },
+                            "ts": {
+                              "type": "integer",
+                              "format": "int64"
+                            },
+                            "hash": {
+                              "type": "string"
+                            },
+                            "signature": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      },
+                      "miner": {
+                        "type": "string"
+                      },
+                      "dist": {
+                        "type": "integer",
+                        "format": "int32"
+                      },
+                      "hash": {
+                        "type": "string"
+                      },
+                      "signature": {
+                        "type": "string"
+                      }
+                    }
+              schema:
+                type: array
+                description: ''
+                minItems: 1
+                uniqueItems: true
+                items:
+                  type: object
+                  properties:
+                    _id:
+                      type: number
+                    phash:
+                      type: string
+                    timestamp:
+                      type: number
+                    txs:
+                      type: array
+                      uniqueItems: true
+                      minItems: 1
+                      items:
+                        properties:
+                          type:
+                            type: number
+                          data:
+                            type: object
+                            properties:
+                              receiver:
+                                type: string
+                              amount:
+                                type: number
+                              memo:
+                                type: string
+                          sender:
+                            type: string
+                          ts:
+                            type: number
+                          hash:
+                            type: string
+                          signature:
+                            type: string
+                    miner:
+                      type: string
+                    dist:
+                      type: number
+                    hash:
+                      type: string
+                    signature:
+                      type: string
+  /transact:
+    post:
+      tags:
+        - Transaction
+      summary: Transact
+      requestBody:
+        content: {}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /new:
+    get:
+      tags:
+        - Posts
+      summary: Get latest posts
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              examples: {}
+              schema:
+                type: array
+                description: ''
+                minItems: 1
+                uniqueItems: true
+                items:
+                  type: object
+                  properties:
+                    _id:
+                      type: string
+                    author:
+                      type: string
+                    link:
+                      type: string
+                    pa: {}
+                    pp: {}
+                    json:
+                      type: object
+                      properties:
+                        files:
+                          type: object
+                          properties:
+                            ipfs:
+                              type: object
+                              properties:
+                                vid:
+                                  type: object
+                                  properties:
+                                    '240':
+                                      type: string
+                                    src:
+                                      type: string
+                                img:
+                                  type: object
+                                  properties:
+                                    '118':
+                                      type: string
+                                    '360':
+                                      type: string
+                                    spr:
+                                      type: string
+                                gw:
+                                  type: string
+                        title:
+                          type: string
+                        desc:
+                          type: string
+                        tag:
+                          type: string
+                        dur:
+                          type: number
+                        hide:
+                          type: number
+                        nsfw:
+                          type: number
+                        oc:
+                          type: number
+                        refs:
+                          type: array
+                          items:
+                            properties: {}
+                    child:
+                      type: array
+                      items:
+                        properties: {}
+                    votes:
+                      type: array
+                      uniqueItems: true
+                      minItems: 1
+                      items:
+                        properties:
+                          u:
+                            type: string
+                          ts:
+                            type: number
+                          vt:
+                            type: number
+                          tag:
+                            type: string
+                          gross:
+                            type: number
+                          claimable:
+                            type: number
+                    ts:
+                      type: number
+                    tags:
+                      type: object
+                      properties:
+                        '#trend':
+                          type: number
+                    dist:
+                      type: number
+  '/feed/{username}':
+    get:
+      tags:
+        - Posts
+      summary: Get user feed
+      parameters:
+        - $ref: '#/components/parameters/username'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              examples: {}
+              schema:
+                type: array
+                description: ''
+                minItems: 1
+                uniqueItems: true
+                items:
+                  type: object
+                  properties:
+                    _id:
+                      type: string
+                    author:
+                      type: string
+                    link:
+                      type: string
+                    pa: {}
+                    pp: {}
+                    json:
+                      type: object
+                      properties:
+                        files:
+                          type: object
+                          properties:
+                            youtube:
+                              type: string
+                        title:
+                          type: string
+                        desc:
+                          type: string
+                        dur:
+                          type: string
+                        tag:
+                          type: string
+                        hide:
+                          type: number
+                        nsfw:
+                          type: number
+                        oc:
+                          type: number
+                        refs:
+                          type: array
+                          items:
+                            properties: {}
+                    child:
+                      type: array
+                      items:
+                        properties: {}
+                    votes:
+                      type: array
+                      uniqueItems: true
+                      minItems: 1
+                      items:
+                        properties:
+                          u:
+                            type: string
+                          ts:
+                            type: number
+                          vt:
+                            type: number
+                          tip:
+                            type: number
+                          gross:
+                            type: number
+                          totalTip:
+                            type: number
+                          claimable:
+                            type: number
+                    ts:
+                      type: number
+                    tags:
+                      type: object
+                      properties:
+                        horology:
+                          type: number
+                    dist:
+                      type: number
+  '/content/{author}/{link}':
+    get:
+      tags:
+        - Posts
+      summary: Get content by id
+      parameters:
+        - $ref: '#/components/parameters/author'
+        - $ref: '#/components/parameters/link'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              examples: {}
+              schema:
+                description: ''
+                type: object
+                properties:
+                  _id:
+                    type: string
+                  author:
+                    type: string
+                  link:
+                    type: string
+                  pa: {}
+                  pp: {}
+                  json:
+                    type: object
+                    properties:
+                      files:
+                        type: object
+                        properties:
+                          youtube:
+                            type: string
+                      title:
+                        type: string
+                      desc:
+                        type: string
+                      dur:
+                        type: string
+                      tag:
+                        type: string
+                      hide:
+                        type: number
+                      nsfw:
+                        type: number
+                      oc:
+                        type: number
+                      refs:
+                        type: array
+                        items:
+                          properties: {}
+                  child:
+                    type: array
+                    items:
+                      properties:
+                        '0':
+                          type: array
+                          uniqueItems: true
+                          items:
+                            properties: {}
+                  votes:
+                    type: array
+                    uniqueItems: true
+                    minItems: 1
+                    items:
+                      properties:
+                        u:
+                          type: string
+                        ts:
+                          type: number
+                        vt:
+                          type: number
+                        tip:
+                          type: number
+                        tag:
+                          type: string
+                        gross:
+                          type: number
+                        totalTip:
+                          type: number
+                        claimable:
+                          type: number
+                        claimed:
+                          type: number
+                  ts:
+                    type: number
+                  tags:
+                    type: object
+                    properties:
+                      onelovedtube:
+                        type: number
+                      dtube:
+                        type: number
+                  dist:
+                    type: number
+                  comments:
+                    type: object
+                    properties:
+                      heimindanger/1a0vaasb7li:
+                        type: object
+                        properties:
+                          _id:
+                            type: string
+                          author:
+                            type: string
+                          link:
+                            type: string
+                          pa:
+                            type: string
+                          pp:
+                            type: string
+                          json:
+                            type: object
+                            properties:
+                              description:
+                                type: string
+                              title:
+                                type: string
+                          child:
+                            type: array
+                            items:
+                              properties:
+                                '0':
+                                  type: array
+                                  uniqueItems: true
+                                  items:
+                                    properties: {}
+                          votes:
+                            type: array
+                            uniqueItems: true
+                            minItems: 1
+                            items:
+                              properties:
+                                u:
+                                  type: string
+                                ts:
+                                  type: number
+                                vt:
+                                  type: number
+                                gross:
+                                  type: number
+                                claimable:
+                                  type: number
+                                claimed:
+                                  type: number
+                          ts:
+                            type: number
+                          dist:
+                            type: number
+                      crypt0inf0/e42tz950kur:
+                        type: object
+                        properties:
+                          _id:
+                            type: string
+                          author:
+                            type: string
+                          link:
+                            type: string
+                          pa:
+                            type: string
+                          pp:
+                            type: string
+                          json:
+                            type: object
+                            properties:
+                              description:
+                                type: string
+                              title:
+                                type: string
+                          child:
+                            type: array
+                            items:
+                              properties:
+                                '0':
+                                  type: array
+                                  uniqueItems: true
+                                  items:
+                                    properties: {}
+                          votes:
+                            type: array
+                            uniqueItems: true
+                            minItems: 1
+                            items:
+                              properties:
+                                u:
+                                  type: string
+                                ts:
+                                  type: number
+                                vt:
+                                  type: number
+                                gross:
+                                  type: number
+                                claimable:
+                                  type: number
+                          ts:
+                            type: number
+                          dist:
+                            type: number
+                      heimindanger/gjfrnchpyzj:
+                        type: object
+                        properties:
+                          _id:
+                            type: string
+                          author:
+                            type: string
+                          link:
+                            type: string
+                          pa:
+                            type: string
+                          pp:
+                            type: string
+                          json:
+                            type: object
+                            properties:
+                              description:
+                                type: string
+                              title:
+                                type: string
+                          child:
+                            type: array
+                            items:
+                              properties: {}
+                          votes:
+                            type: array
+                            uniqueItems: true
+                            minItems: 1
+                            items:
+                              properties:
+                                u:
+                                  type: string
+                                ts:
+                                  type: number
+                                vt:
+                                  type: number
+                                gross:
+                                  type: number
+                                claimable:
+                                  type: number
+                                claimed:
+                                  type: number
+                          ts:
+                            type: number
+                          dist:
+                            type: number
+  '/feed/{username}/{author}/{link}':
+    get:
+      tags:
+        - Posts
+      summary: Get user feed in detail
+      parameters:
+        - $ref: '#/components/parameters/username'
+        - $ref: '#/components/parameters/author'
+        - $ref: '#/components/parameters/link'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /hot:
+    get:
+      tags:
+        - Posts
+      summary: Hot videos
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                description: ''
+                minItems: 1
+                uniqueItems: true
+                items:
+                  type: object
+                  properties:
+                    _id:
+                      type: string
+                    author:
+                      type: string
+                    link:
+                      type: string
+                    json:
+                      type: object
+                      properties:
+                        files:
+                          type: object
+                          properties:
+                            ipfs:
+                              type: object
+                              properties:
+                                vid:
+                                  type: object
+                                  properties:
+                                    src:
+                                      type: string
+                                img:
+                                  type: object
+                                  properties:
+                                    '118':
+                                      type: string
+                                    '360':
+                                      type: string
+                                    spr:
+                                      type: string
+                                gw:
+                                  type: string
+                        title:
+                          type: string
+                        desc:
+                          type: string
+                        tag:
+                          type: string
+                        dur:
+                          type: string
+                        hide:
+                          type: number
+                        nsfw:
+                          type: number
+                        oc:
+                          type: number
+                        refs:
+                          type: array
+                          items:
+                            properties: {}
+                    child:
+                      type: array
+                      items:
+                        properties: {}
+                    votes:
+                      type: array
+                      uniqueItems: true
+                      minItems: 1
+                      items:
+                        properties:
+                          u:
+                            type: string
+                          ts:
+                            type: number
+                          vt:
+                            type: number
+                          tag:
+                            type: string
+                          gross:
+                            type: number
+                          claimable:
+                            type: number
+                    ts:
+                      type: number
+                    tags:
+                      type: object
+                      properties:
+                        volleyball:
+                          type: number
+                    dist:
+                      type: number
+                    score:
+                      type: number
+                    ups:
+                      type: number
+                    downs:
+                      type: number
+  '/hot/{author}/{link}':
+    get:
+      tags:
+        - Posts
+      summary: Hot videos in detail
+      parameters:
+        - $ref: '#/components/parameters/author'
+        - $ref: '#/components/parameters/link'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  '/new/{author}/{link}':
+    get:
+      tags:
+        - Posts
+      summary: New videos in detail
+      parameters:
+        - $ref: '#/components/parameters/author'
+        - $ref: '#/components/parameters/link'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /trending:
+    get:
+      tags:
+        - Posts
+      summary: Trending videos
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                description: ''
+                minItems: 1
+                uniqueItems: true
+                items:
+                  type: object
+                  properties:
+                    _id:
+                      type: string
+                    author:
+                      type: string
+                    link:
+                      type: string
+                    pa: {}
+                    pp: {}
+                    json:
+                      type: object
+                      properties:
+                        files:
+                          type: object
+                          properties:
+                            youtube:
+                              type: string
+                        title:
+                          type: string
+                        desc:
+                          type: string
+                        dur:
+                          type: string
+                        tag:
+                          type: string
+                        hide:
+                          type: number
+                        nsfw:
+                          type: number
+                        oc:
+                          type: number
+                        refs:
+                          type: array
+                          items:
+                            properties: {}
+                    child:
+                      type: array
+                      items:
+                        properties: {}
+                    votes:
+                      type: array
+                      uniqueItems: true
+                      minItems: 1
+                      items:
+                        properties:
+                          u:
+                            type: string
+                          ts:
+                            type: number
+                          vt:
+                            type: number
+                          tag:
+                            type: string
+                          gross:
+                            type: number
+                          claimable:
+                            type: number
+                    ts:
+                      type: number
+                    tags:
+                      type: object
+                      properties:
+                        asmr:
+                          type: number
+                    dist:
+                      type: number
+                    score:
+                      type: number
+                    ups:
+                      type: number
+                    downs:
+                      type: number
+  '/youtube/{video_id}':
+    get:
+      tags:
+        - Posts
+      summary: Youtube
+      parameters:
+        - $ref: '#/components/parameters/video_id'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  '/trending/{author}/{link}':
+    get:
+      tags:
+        - Posts
+      summary: Trending videos in detail
+      parameters:
+        - $ref: '#/components/parameters/author'
+        - $ref: '#/components/parameters/link'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /schedule:
+    get:
+      tags:
+        - default
+      summary: Return current N blocks witness shuffle
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
