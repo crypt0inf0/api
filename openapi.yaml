@@ -81,7 +81,7 @@ paths:
                       description: User id
                     name:
                       type: string
-                      description: Username/Channal name
+                      description: Username/Channel name
                     pub:
                       type: string
                       description: Public key
@@ -179,7 +179,46 @@ paths:
                     pub_leader:
                       type: string
                       description: Pu
-              examples: {}
+              examples:
+                example-1:
+                  value:
+                    - _id: string
+                      name: string
+                      pub: string
+                      balance: 0
+                      bw:
+                        v: 0
+                        t: 0
+                      vt:
+                        v: 0
+                        t: 0
+                      pr:
+                        v: 0
+                        t: 0
+                      uv: 0
+                      approves:
+                        - {}
+                      node_appr: 0
+                      follows:
+                        - {}
+                      followers:
+                        - {}
+                      keys:
+                        - id: string
+                          pub: string
+                          types:
+                            - {}
+                      json:
+                        node: {}
+                        profile:
+                          avatar: string
+                          cover_image: string
+                          about: string
+                          location: string
+                          website: string
+                          steem: string
+                          hive: string
+                      pub_leader: string
           headers: {}
       description: Get all top 13 leaders/miners
   '/accountPrice/{username}':
@@ -206,7 +245,7 @@ paths:
           content:
             application/json:
               examples:
-                example:
+                example-1:
                   value:
                     accountPriceBase: 20000
                     accountPriceCharMult: 4
@@ -485,7 +524,10 @@ paths:
           description: Successful response
           content:
             application/json:
-              examples: {}
+              examples:
+                example-1:
+                  value:
+                    count: 10
               schema:
                 description: ''
                 type: object
@@ -506,7 +548,24 @@ paths:
           description: Successful response
           content:
             application/json:
-              examples: {}
+              examples:
+                example-1:
+                  value:
+                    _id: 0
+                    phash: string
+                    timestamp: 0
+                    txs:
+                      - type: 0
+                        data:
+                          target: string
+                        sender: string
+                        ts: 0
+                        hash: string
+                        signature: string
+                    miner: string
+                    dist: 0
+                    hash: string
+                    signature: string
               schema:
                 description: ''
                 type: object
@@ -643,7 +702,13 @@ paths:
           description: Successful response
           content:
             application/json:
-              examples: {}
+              examples:
+                example-1:
+                  value:
+                    - _id: string
+                      name: string
+                      dist: 0
+                      ts: 0
               schema:
                 type: array
                 description: ''
@@ -657,7 +722,7 @@ paths:
                       description: Content id
                     name:
                       type: string
-                      description: Username/author/channal name
+                      description: Username/author/channel name
                     dist:
                       type: number
                       description: Distributer name
@@ -725,7 +790,24 @@ paths:
         '200':
           description: Successful response
           content:
-            application/json: {}
+            application/json:
+              schema:
+                description: ''
+                type: object
+                properties:
+                  pub:
+                    type: string
+                    minLength: 1
+                    description: Public key
+                  priv:
+                    type: string
+                    minLength: 1
+                    description: Private key (Don't share it with anyone)
+              examples:
+                example-1:
+                  value:
+                    pub: string
+                    priv: string
       description: Generate new key pair
   '/notifications/{username}':
     get:
@@ -739,7 +821,23 @@ paths:
           description: Successful response
           content:
             application/json:
-              examples: {}
+              examples:
+                example-1:
+                  value:
+                    - _id: string
+                      u: string
+                      tx:
+                        type: 0
+                        data:
+                          author: string
+                          link: string
+                          vt: 0
+                          tag: string
+                        sender: string
+                        ts: 0
+                        hash: string
+                        signature: string
+                      ts: 0
               schema:
                 type: array
                 description: ''
@@ -750,28 +848,52 @@ paths:
                   properties:
                     _id:
                       type: string
+                      minLength: 1
+                      description: Content id
                     u:
                       type: string
+                      minLength: 1
+                      description: Username
                     tx:
                       type: object
+                      description: 'Refer <a href="https://github.com/dtube/avalon/blob/f906e422db75cb95a755fef1747785250f8cd181/src/transactions/index.js#L29">Tx Types</a>'
                       properties:
                         type:
                           type: number
                         data:
                           type: object
                           properties:
-                            target:
+                            author:
                               type: string
+                              minLength: 1
+                              description: User who create a post
+                            link:
+                              type: string
+                              minLength: 1
+                              description: Link of the post
+                            vt:
+                              type: number
+                              description: Vote count on the post
+                            tag:
+                              type: string
+                              description: List all tags
                         sender:
                           type: string
+                          minLength: 1
+                          description: Dtube user who create a tx ie. Like/dislike/comment on the post
                         ts:
                           type: number
+                          description: Timestamp
                         hash:
                           type: string
+                          minLength: 1
                         signature:
                           type: string
+                          minLength: 1
                     ts:
                       type: number
+                      description: Timestamp
+      description: Return user notifications
   '/followers/{username}':
     get:
       tags:
@@ -792,6 +914,11 @@ paths:
                 items:
                   type: object
                   properties: {}
+              examples:
+                example-1:
+                  value:
+                    - {}
+      description: Return user followers
   '/follows/{username}':
     get:
       tags:
@@ -812,6 +939,11 @@ paths:
                 items:
                   type: object
                   properties: {}
+              examples:
+                example-1:
+                  value:
+                    - {}
+      description: Return user following
   '/account/{username}':
     get:
       tags:
@@ -824,21 +956,60 @@ paths:
           description: Successful response
           content:
             application/json:
-              examples: {}
+              examples:
+                example-1:
+                  value:
+                    _id: string
+                    name: string
+                    pub: string
+                    balance: 0
+                    bw:
+                      v: 0
+                      t: 0
+                    vt:
+                      v: 0
+                      t: 0
+                    follows:
+                      - {}
+                    followers:
+                      - {}
+                    keys:
+                      - {}
+                    created:
+                      by: string
+                      ts: 0
+                    json:
+                      profile:
+                        avatar: string
+                        cover_image: string
+                        about: string
+                        location: string
+                        website: string
+                        steem: string
+                        hive: string
+                    approves:
+                      - {}
+                    pub_leader: string
+                    node_appr: 0
               schema:
                 description: ''
                 type: object
                 properties:
                   _id:
                     type: string
+                    description: Account id
                   name:
                     type: string
+                    description: Username/channel name
                   pub:
                     type: string
+                    description: Public key
                   balance:
                     type: number
+                    description: User balance
                   bw:
                     type: object
+                    description: User bandwidth
                     properties:
                       v:
                         type: number
@@ -846,6 +1017,7 @@ paths:
                         type: number
                   vt:
                     type: object
+                    description: User voting power
                     properties:
                       v:
                         type: number
@@ -853,16 +1025,18 @@ paths:
                         type: number
                   follows:
                     type: array
+                    description: User following
                     items:
-                      properties: {}
+                      type: object
                   followers:
                     type: array
+                    description: User followers
                     items:
-                      properties: {}
+                      type: object
                   keys:
                     type: array
                     items:
-                      properties: {}
+                      type: object
                   created:
                     type: object
                     properties:
@@ -878,26 +1052,36 @@ paths:
                         properties:
                           avatar:
                             type: string
+                            description: Profile picture url
                           cover_image:
                             type: string
+                            description: Cover image url
                           about:
                             type: string
+                            description: About section
                           location:
                             type: string
+                            description: User location
                           website:
                             type: string
+                            description: User website
                           steem:
                             type: string
+                            description: User steem account
                           hive:
                             type: string
+                            description: User hive account
                   approves:
                     type: array
+                    description: List of leaders approved by this user
                     items:
-                      properties: {}
+                      type: object
                   pub_leader:
                     type: string
+                    description: Public leader key
                   node_appr:
                     type: number
+      description: Get account details
   '/accounts/{usernames}':
     get:
       tags:
@@ -910,6 +1094,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      description: Return multiple user account details
   '/blog/{username}':
     get:
       tags:
@@ -922,7 +1107,44 @@ paths:
           description: Successful response
           content:
             application/json:
-              examples: {}
+              examples:
+                example-1:
+                  value:
+                    - _id: string
+                      author: string
+                      link: string
+                      pa: null
+                      pp: null
+                      json:
+                        files:
+                          youtube: string
+                        title: string
+                        desc: string
+                        dur: string
+                        tag: string
+                        hide: 0
+                        nsfw: 0
+                        oc: 0
+                        refs:
+                          - {}
+                      child:
+                        - '0':
+                            - {}
+                      votes:
+                        - u: string
+                          ts: 0
+                          vt: 0
+                          tip: 0
+                          tag: string
+                          gross: 0
+                          totalTip: 0
+                          claimable: 0
+                          claimed: 0
+                      ts: 0
+                      tags:
+                        onelovedtube: 0
+                        dtube: 0
+                      dist: 0
               schema:
                 type: array
                 description: ''
@@ -933,10 +1155,13 @@ paths:
                   properties:
                     _id:
                       type: string
+                      description: Content id
                     author:
                       type: string
+                      description: Content author/username
                     link:
                       type: string
+                      description: Content link
                     pa: {}
                     pp: {}
                     json:
@@ -944,17 +1169,22 @@ paths:
                       properties:
                         files:
                           type: object
+                          description: Source orgin of the content
                           properties:
                             youtube:
                               type: string
                         title:
                           type: string
+                          description: Title of the content
                         desc:
                           type: string
+                          description: Description of the content
                         dur:
                           type: string
+                          description: Duration of the content in seconds
                         tag:
                           type: string
+                          description: Tags
                         hide:
                           type: number
                         nsfw:
@@ -963,45 +1193,59 @@ paths:
                           type: number
                         refs:
                           type: array
+                          description: Steem/Hive link
                           items:
-                            properties: {}
+                            type: object
                     child:
                       type: array
                       items:
+                        type: object
                         properties:
                           '0':
                             type: array
                             uniqueItems: true
                             items:
-                              properties: {}
+                              type: object
                     votes:
                       type: array
                       uniqueItems: true
                       minItems: 1
+                      description: Total vote count on the content
                       items:
+                        type: object
                         properties:
                           u:
                             type: string
+                            description: Username of the user who vote on this content
                           ts:
                             type: number
+                            description: Vote timestamp
                           vt:
                             type: number
+                            description: Vote power amount
                           tip:
                             type: number
+                            description: 'Tip in percentage '
                           tag:
                             type: string
+                            description: Tags
                           gross:
                             type: number
                           totalTip:
                             type: number
+                            description: Total tip in percentage
                           claimable:
                             type: number
+                            description: Total claimable amount
                           claimed:
                             type: number
+                            description: Total claimed amount
                     ts:
                       type: number
+                      description: Timestamp
                     tags:
                       type: object
+                      description: Content tags
                       properties:
                         onelovedtube:
                           type: number
@@ -1009,6 +1253,7 @@ paths:
                           type: number
                     dist:
                       type: number
+      description: Return channel info
   '/blog/{username}/{author}/{link}':
     get:
       tags:
@@ -1035,7 +1280,25 @@ paths:
           description: Successful response
           content:
             application/json:
-              examples: {}
+              examples:
+                example-1:
+                  value:
+                    - _id: 0
+                      phash: string
+                      timestamp: 0
+                      txs:
+                        - type: 0
+                          data:
+                            pub: string
+                            name: string
+                          sender: string
+                          ts: 0
+                          hash: string
+                          signature: string
+                      miner: string
+                      dist: 0
+                      hash: string
+                      signature: string
               schema:
                 type: array
                 description: ''
@@ -1046,6 +1309,7 @@ paths:
                   properties:
                     _id:
                       type: number
+                      description: ID
                     phash:
                       type: string
                     timestamp:
@@ -1054,7 +1318,9 @@ paths:
                       type: array
                       uniqueItems: true
                       minItems: 1
+                      description: 'Refer <a href="https://github.com/dtube/avalon/blob/f906e422db75cb95a755fef1747785250f8cd181/src/transactions/index.js#L29">Tx Types</a>'
                       items:
+                        type: object
                         properties:
                           type:
                             type: number
@@ -1095,74 +1361,25 @@ paths:
           content:
             application/json:
               examples:
-                Response Example:
-                  value: |-
-                    {
-                      "_id": {
-                        "type": "integer",
-                        "format": "int32"
-                      },
-                      "phash": {
-                        "type": "string"
-                      },
-                      "timestamp": {
-                        "type": "integer",
-                        "format": "int64"
-                      },
-                      "txs": {
-                        "type": "array",
-                        "items": {
-                          "type": "object",
-                          "properties": {
-                            "type": {
-                              "type": "integer",
-                              "format": "int32"
-                            },
-                            "data": {
-                              "type": "object",
-                              "properties": {
-                                "receiver": {
-                                  "type": "string"
-                                },
-                                "amount": {
-                                  "type": "integer",
-                                  "format": "int32"
-                                },
-                                "memo": {
-                                  "type": "string"
-                                }
-                              }
-                            },
-                            "sender": {
-                              "type": "string"
-                            },
-                            "ts": {
-                              "type": "integer",
-                              "format": "int64"
-                            },
-                            "hash": {
-                              "type": "string"
-                            },
-                            "signature": {
-                              "type": "string"
-                            }
-                          }
-                        }
-                      },
-                      "miner": {
-                        "type": "string"
-                      },
-                      "dist": {
-                        "type": "integer",
-                        "format": "int32"
-                      },
-                      "hash": {
-                        "type": "string"
-                      },
-                      "signature": {
-                        "type": "string"
-                      }
-                    }
+                example-1:
+                  value:
+                    - _id: 0
+                      phash: string
+                      timestamp: 0
+                      txs:
+                        - type: 0
+                          data:
+                            receiver: string
+                            amount: 0
+                            memo: string
+                          sender: string
+                          ts: 0
+                          hash: string
+                          signature: string
+                      miner: string
+                      dist: 0
+                      hash: string
+                      signature: string
               schema:
                 type: array
                 description: ''
@@ -1232,7 +1449,47 @@ paths:
           description: Successful response
           content:
             application/json:
-              examples: {}
+              examples:
+                example-1:
+                  value:
+                    - _id: string
+                      author: string
+                      link: string
+                      pa: null
+                      pp: null
+                      json:
+                        files:
+                          ipfs:
+                            vid:
+                              '240': string
+                              src: string
+                            img:
+                              '118': string
+                              '360': string
+                              spr: string
+                            gw: string
+                        title: string
+                        desc: string
+                        tag: string
+                        dur: 0
+                        hide: 0
+                        nsfw: 0
+                        oc: 0
+                        refs:
+                          - {}
+                      child:
+                        - {}
+                      votes:
+                        - u: string
+                          ts: 0
+                          vt: 0
+                          tag: string
+                          gross: 0
+                          claimable: 0
+                      ts: 0
+                      tags:
+                        '#trend': 0
+                      dist: 0
               schema:
                 type: array
                 description: ''
@@ -1337,7 +1594,40 @@ paths:
           description: Successful response
           content:
             application/json:
-              examples: {}
+              examples:
+                example-1:
+                  value:
+                    - _id: string
+                      author: string
+                      link: string
+                      pa: null
+                      pp: null
+                      json:
+                        files:
+                          youtube: string
+                        title: string
+                        desc: string
+                        dur: string
+                        tag: string
+                        hide: 0
+                        nsfw: 0
+                        oc: 0
+                        refs:
+                          - {}
+                      child:
+                        - {}
+                      votes:
+                        - u: string
+                          ts: 0
+                          vt: 0
+                          tip: 0
+                          gross: 0
+                          totalTip: 0
+                          claimable: 0
+                      ts: 0
+                      tags:
+                        horology: 0
+                      dist: 0
               schema:
                 type: array
                 description: ''
@@ -1426,7 +1716,106 @@ paths:
           description: Successful response
           content:
             application/json:
-              examples: {}
+              examples:
+                example-1:
+                  value:
+                    _id: string
+                    author: string
+                    link: string
+                    pa: null
+                    pp: null
+                    json:
+                      files:
+                        youtube: string
+                      title: string
+                      desc: string
+                      dur: string
+                      tag: string
+                      hide: 0
+                      nsfw: 0
+                      oc: 0
+                      refs:
+                        - {}
+                    child:
+                      - '0':
+                          - {}
+                    votes:
+                      - u: string
+                        ts: 0
+                        vt: 0
+                        tip: 0
+                        tag: string
+                        gross: 0
+                        totalTip: 0
+                        claimable: 0
+                        claimed: 0
+                    ts: 0
+                    tags:
+                      onelovedtube: 0
+                      dtube: 0
+                    dist: 0
+                    comments:
+                      heimindanger/1a0vaasb7li:
+                        _id: string
+                        author: string
+                        link: string
+                        pa: string
+                        pp: string
+                        json:
+                          description: string
+                          title: string
+                        child:
+                          - '0':
+                              - {}
+                        votes:
+                          - u: string
+                            ts: 0
+                            vt: 0
+                            gross: 0
+                            claimable: 0
+                            claimed: 0
+                        ts: 0
+                        dist: 0
+                      crypt0inf0/e42tz950kur:
+                        _id: string
+                        author: string
+                        link: string
+                        pa: string
+                        pp: string
+                        json:
+                          description: string
+                          title: string
+                        child:
+                          - '0':
+                              - {}
+                        votes:
+                          - u: string
+                            ts: 0
+                            vt: 0
+                            gross: 0
+                            claimable: 0
+                        ts: 0
+                        dist: 0
+                      heimindanger/gjfrnchpyzj:
+                        _id: string
+                        author: string
+                        link: string
+                        pa: string
+                        pp: string
+                        json:
+                          description: string
+                          title: string
+                        child:
+                          - {}
+                        votes:
+                          - u: string
+                            ts: 0
+                            vt: 0
+                            gross: 0
+                            claimable: 0
+                            claimed: 0
+                        ts: 0
+                        dist: 0
               schema:
                 description: ''
                 type: object
@@ -1776,6 +2165,47 @@ paths:
                       type: number
                     downs:
                       type: number
+              examples:
+                example-1:
+                  value:
+                    - _id: string
+                      author: string
+                      link: string
+                      json:
+                        files:
+                          ipfs:
+                            vid:
+                              src: string
+                            img:
+                              '118': string
+                              '360': string
+                              spr: string
+                            gw: string
+                        title: string
+                        desc: string
+                        tag: string
+                        dur: string
+                        hide: 0
+                        nsfw: 0
+                        oc: 0
+                        refs:
+                          - {}
+                      child:
+                        - {}
+                      votes:
+                        - u: string
+                          ts: 0
+                          vt: 0
+                          tag: string
+                          gross: 0
+                          claimable: 0
+                      ts: 0
+                      tags:
+                        volleyball: 0
+                      dist: 0
+                      score: 0
+                      ups: 0
+                      downs: 0
   '/hot/{author}/{link}':
     get:
       tags:
@@ -1891,6 +2321,42 @@ paths:
                       type: number
                     downs:
                       type: number
+              examples:
+                example-1:
+                  value:
+                    - _id: string
+                      author: string
+                      link: string
+                      pa: null
+                      pp: null
+                      json:
+                        files:
+                          youtube: string
+                        title: string
+                        desc: string
+                        dur: string
+                        tag: string
+                        hide: 0
+                        nsfw: 0
+                        oc: 0
+                        refs:
+                          - {}
+                      child:
+                        - {}
+                      votes:
+                        - u: string
+                          ts: 0
+                          vt: 0
+                          tag: string
+                          gross: 0
+                          claimable: 0
+                      ts: 0
+                      tags:
+                        asmr: 0
+                      dist: 0
+                      score: 0
+                      ups: 0
+                      downs: 0
   '/youtube/{video_id}':
     get:
       tags:
