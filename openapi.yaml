@@ -180,6 +180,11 @@ paths:
                       type: string
                       description: Pu
               examples: {}
+          headers:
+            header-0:
+              schema:
+                type: string
+              description: Return all top 13 leaders/miners
       description: Get all top leaders
   '/accountPrice/{username}':
     get:
@@ -465,6 +470,11 @@ paths:
                     description: Number of ms needed for 0.01 DTC to generate 1 vt
                   vtPerBurn:
                     type: number
+          headers:
+            header-0:
+              schema:
+                type: string
+              description: 'Return avalon config '
   /count:
     get:
       tags:
@@ -483,6 +493,7 @@ paths:
                   count:
                     type: number
                     description: Current block number
+      description: Get the current block height
   '/block/{block_num}':
     get:
       tags:
@@ -535,6 +546,7 @@ paths:
                     type: string
                   signature:
                     type: string
+      description: Get the block info
   /mineBlock:
     get:
       tags:
@@ -545,6 +557,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      description: Force the node to mine block
   /peers:
     get:
       tags:
@@ -556,6 +569,7 @@ paths:
           content:
             application/json:
               examples: {}
+      description: List all peers
   /addPeer:
     post:
       tags:
@@ -571,6 +585,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      description: Add your node to peer
   /cacheb:
     get:
       tags:
@@ -581,6 +596,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      description: Debugging cached blocks
   /cache:
     get:
       tags:
@@ -591,6 +607,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      description: Debugging cache object
   '/distributed/{username}':
     get:
       tags:
@@ -620,6 +637,7 @@ paths:
                       type: number
                     ts:
                       type: number
+      description: List all the contant distributed by the user ie. This is like a hosting provider. Any users can become a distributer by providing your own IPFS
   /nextblock:
     get:
       tags:
@@ -630,6 +648,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      description: Debugging consensus data
   '/oembed/:url':
     get:
       tags:
@@ -640,6 +659,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      description: Fetching oembed from url
   '/opengraph/:url':
     get:
       tags:
@@ -650,11 +670,12 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      description: Fetching opengraph data from url
   /rewardPool:
     get:
       tags:
         - General
-      summary: Economy data
+      summary: Reward pool
       responses:
         '200':
           description: Successful response
@@ -675,6 +696,7 @@ paths:
                     type: number
                   avail:
                     type: number
+      description: Reward pool gets allocated based on the network status
   /newKeyPair:
     get:
       tags:
@@ -688,6 +710,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
+      description: Generate new key pair
   '/notifications/{username}':
     get:
       tags:
