@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* overflow-y: hidden; */
+  }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif, serif;
+  }
+
+  #header {
+    height: 56px;
+  }
+
+  /* Bootstrap navbar */
+  .nav-link {
+    color: hsl(0deg 0% 86%);
+  }
+
+  .nav-link:hover {
+    color: #ffffff;
+  }
+  
+  /* .nav-item {
+    margin-right: 20px;
+    } */
+
+  /* Flexbox */
+  #page {
+    display: flex;
+    height: calc( 100vh - 56px);
+    /* calculate the height. Header is 55px */
+  }
+
+  /* External url content */
+  .external_url {
+    width: 100%;
+    height: calc( 100vh - 56px);
+    overflow: auto;
+  }
+
+  /* Nav section */
+  #nav_link .sidebar-title {
+    padding-top: 26px;
+    padding-left: 22px;
+    padding-bottom: 12px;
+    color: hsl(0deg 0% 15% / 90%);
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+  }
+
+  #nav_link {
+    height: 100%;
+    width: 300px; 
+    padding-left: calc((100% - 1800px) / 2);
+    background: #ebeef5;
+  }
+
+  #nav_link li {
+    list-style-type: none;
+    text-decoration-style: none;
+  }
+
+  #nav_link a, #nav_link label {
+    /* width: 300px; */
+    display: block;
+    margin:0;
+    font-size: 14px;
+    text-decoration: none;
+    color: hsl(0deg 0% 15%);
+    padding: 7px 25px;
+    -webkit-transition: all .25s ease-in;
+    transition: all .25s ease-in;
+  }
+
+  #nav_link a:hover,  #nav_link label:hover{
+    color: hsl(0deg 0% 15% / 90%);
+    background:#dde3ee;
+  }
+
+  .active_link {
+    background: #c3e3f8;
+  }
+
+  /**
+   * Hide nested lists
+   */
+  
+  #nav_link .dropdown-list {
+    height: 100%;
+    padding-left: 10px;
+    /* display: block; */
+    max-height: 0;
+    overflow: hidden;
+    -webkit-transition: max-height .5s ease-in-out;
+    transition: max-height .5s ease-in-out;
+  }
+
+  #nav_link input[type=checkbox]:checked + label + ul { /* reset the height when checkbox is checked */
+    max-height: 1000px; }
+  
+  label > span {
+    float: right;
+    -webkit-transition: -webkit-transform .65s ease;
+    transition: transform .65s ease;
+  }
+  
+  #nav_link input[type=checkbox]:checked + label > span {
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+
+  /* Right content */
+  #right-content {
+    flex: 1 0 0;
+    position: relative;
+    overflow: auto;
+  }
+  section {
+    height: 0;
+    display: none;
+  }
+  section:target {
+    display: block;
+    height: 100vh;
+    padding: 20px;
+  }
+
+
+
+
+
+

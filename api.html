@@ -1,0 +1,43 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+    <title>Dtube API</title>
+    <!-- Embed elements Elements via Web Component -->
+    <script src="https://unpkg.com/@stoplight/elements/web-components.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/@stoplight/elements/styles.min.css">    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+  </head>
+  <body>
+    <div id="header">
+      <!-- Header Vertical Navigation -->
+      <div class="nav-header">
+        <nav class="navbar navbar-expand" style="background-color: hsl(218deg 32% 7%);">
+            <a href="index.html" class="navbar-brand" style="padding-bottom: 5px; padding-left: 5px; bottom: -30px; padding-right: 10px; padding-top: 2px; width: 45px;">
+            <img border="0" alt="logo" src="images/logo.png" width="30" height="30"></a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav">
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="https://d.tube" target="_blank" class="nav-item nav-link">Dtube</a>
+                <a href="api.html" class="nav-item nav-link">API</a>
+                <a href="#" target="_blank" class="nav-item nav-link disabled" tabindex="-1">Exchange</a>
+            </div>
+        </nav>
+    </div>
+  </div>
+
+    <elements-api
+      apiDescriptionUrl="yaml/openapi.yaml"
+      router="hash"
+      layout="sidebar"
+    />
+
+  </body>
+</html>
