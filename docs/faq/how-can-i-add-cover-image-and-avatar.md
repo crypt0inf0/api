@@ -2,11 +2,9 @@
 
 You need to have a DTube account and log in with it, then you need to go to **My Channel** and go in to **ABOUT** section, finally click the red **EDIT** button.
 
-<center>
-
-![](https://i.imgur.com/43DWatQ.png)
-
-</center>
+<p align="center">
+  <img src="docs/imgs/avatar/43DWatQ.png" />
+</p>
 
 You can edit your information from this section and image and cover url should be in the same format like the picture above. Make sure you link to an image (.png, .jpg, etc), and **not** to a webpage.
 

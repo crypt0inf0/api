@@ -18,36 +18,29 @@ If you are not involved with Cryptocurrencies before don't feel overwhelmed its 
 **Step 1:** : You need to create an account first go to https://ionomy.com/ and hit Sign up
 
 
-<center>
-
-![](https://i.imgur.com/cc2SNn3.png)
-
-
-</center>
-
+<p align="center">
+  <img src="docs/imgs/ionomy/cc2SNn3.png" />
+</p>
 
 
 **Step 2:** After you login to your account go to your wallet and get a wallet adress for cryptocurrency you want to transfer to Ionomy in this case we will use **Bitcoin**
 
-<center>
+<p align="center">
+  <img src="docs/imgs/ionomy/83ye41S.png" />
+</p>
 
-![](https://i.imgur.com/83ye41S.png)
-
-</center>
-
-
-<center>
-
-![](https://i.imgur.com/fMKrYL4.png)
-
-</center>
+<p align="center">
+  <img src="docs/imgs/ionomy/fMKrYL4.png" />
+</p>
 
 After clicking the button you will receive a Bitcoin adress dedicated to your account use that adress to transfer the Bitcoins you purchased from another exchange or from your wallet directly.
 
 
 **Step 3:** After receiving your Bitcoin in to your Ionomy account go to Dtube Coin(BTC-DTC) market :https://ionomy.com/en/markets/btc-dtube
 
-![](https://i.imgur.com/Wm9DVkZ.png)
+<p>
+  <img src="docs/imgs/ionomy/Wm9DVkZ.png" />
+</p>
 
 **Ask:**  is the price current sellers asking for
 
@@ -55,11 +48,10 @@ After clicking the button you will receive a Bitcoin adress dedicated to your ac
 
 **Step 4:** After you check asks and bids leave a bid order or directly buy the lowest ask by filling this.
 
-<center>
 
-![](https://i.imgur.com/zi8WpSt.png)
-
-</center>
+<p align="center">
+  <img src="docs/imgs/ionomy/zi8WpSt.png" />
+</p>
 
 
 After confirming your order you should receive your Dtube coins in your wallet instantly if there are any sellers.
@@ -67,25 +59,20 @@ After confirming your order you should receive your Dtube coins in your wallet i
 
 **Step 5:** If you want to transfer Dtube coins you got, you need to go to your Dtube Ionomy wallet and press **send** button.
 
-<center>
-
-![](https://i.imgur.com/qpFVpxY.png)
-
-</center>
+<p align="center">
+  <img src="docs/imgs/ionomy/qpFVpxY.png" />
+</p>
 
 **Step 6:** Fill the recipient adress with your Dtube account name (Not Steem or Hive name it should be your Avalon account)
-<center>
 
-![](https://i.imgur.com/D9gaV7X.png)
-
-</center>
+<p align="center">
+  <img src="docs/imgs/ionomy/D9gaV7X.png" />
+</p>
 
 After you filled the form correctly press send button and you will receive an Email about confirmation of your transaction.
 
-<center>
-
-![](https://i.imgur.com/OTcYkRv.png)
-
-</center>
+<p align="center">
+  <img src="docs/imgs/ionomy/OTcYkRv.png" />
+</p>
 
 Verify the transaction from your E-mail and you should receive your Dtube coins in to your Dtube account in several minutes.

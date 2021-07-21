@@ -17,11 +17,9 @@ DTube accounts can have multiple keys associated to it:
 
 In order a create a custom key, you need to enter your **channel** then go into **keys**
 
-<center>
-
-![](https://i.imgur.com/aJTzTX3.png)
-
-</center>
+<p align="center">
+  <img src="docs/imgs/keys/aJTzTX3.png" />
+</p>
 
 #### Key identifier
 This one can be any word you want. It's to remember what the key is for later on.

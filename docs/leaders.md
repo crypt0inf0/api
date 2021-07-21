@@ -4,11 +4,9 @@ Leaders are the backbone of the DTube project. Leaders run the node server that 
 
 ### How to vote leaders
 
-<center>
-
-![](https://i.imgur.com/iuATj3O.png)
-
-</center>
+<p align="center">
+  <img src="docs/imgs/leaders/iuATj3O.png" />
+</p>
 
 You can vote a leader you desire from **Leaders** segment and you will see an [election](https://d.tube/#!/election) page. All you have to do is search the leader you want to vote from list or if they are not on the list you can vote by typing their name down bottom.
 

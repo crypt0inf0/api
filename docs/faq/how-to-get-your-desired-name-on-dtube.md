@@ -25,11 +25,9 @@ All the tokens you spent on account creation will be burned and be permenantly o
 
 **Step 3**  Generate keys by clicking the generate button and save them somewhere secure. **Keep in mind that your account is only yours and immutable if you lose your keys there is nothing we can do.**
 
-<center>
-
-![](https://i.imgur.com/KM5MsSA.png)
-
-</center>
+<p align="center">
+  <img src="docs/imgs/username/KM5MsSA.png" />
+</p>
 
 **Step 4:** Click create your account after that you will be owner of that name and accesss to account with **private key** 
 
@@ -48,11 +46,9 @@ All the tokens you spent on account creation will be burned and be permenantly o
 
 **Step 1:** Go to https://signup.d.tube/ and get yourself a free account.
 
-<center>
-
-![](https://i.imgur.com/MixBZz6.png)
-
-</center>
+<p align="center">
+  <img src="docs/imgs/username/MixBZz6.png" />
+</p>
 
 **Step 2:** Get some Dtube coin to your new account. If you are new and have no idea how to get Dtube coins this [guide](https://d.tube/#!/wiki/faq/how-to-get-dtube-coin-from-ionomy) will help you or you can check help to see multiple options.
 

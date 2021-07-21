@@ -6,11 +6,9 @@ You can also burn **DTC** to **promote** your videos  all the DTC used in this p
 Promoting content will provide more exposure and that may lead to getting more rewards on the video - if it is proved to
 be a successful piece of content.
 
-<center>
-
-![](https://i.imgur.com/QUpoNy7.png)
-
-</center>
+<p align="center">
+  <img src="docs/imgs/economy/QUpoNy7.png" />
+</p>
 
 ## Curation and reward mechanics
 You earn rewards by curating or getting curated, there are 3 important indicators in this game. How many people voted before and after you, time passed after published content and the amount of VT you spend to vote.
@@ -18,11 +16,9 @@ You can generate rewards in Dtube without any time boundries, however inbetween 
 
 #### You can claim your rewards whenever you want
 
-<center>
-
-![](https://i.imgur.com/9YZtg5K.png)
-
-</center>
+<p align="center">
+  <img src="docs/imgs/economy/9YZtg5K.png" />
+</p>
 
 After 7 days period you can either wait your curation or video content to generate more rewards or you can click claim from rewards page, however when you click claim you won't be able to generate infinite rewards for that vote or content.
 This 7 day period is really essential for healthy economy and it gives opportunity to community to act to bad actors with downvotes. Downvotes is a great way for community to moderate content and you can delete rewards from the most recent upvoters with a downvote.
@@ -31,11 +27,9 @@ This 7 day period is really essential for healthy economy and it gives opportuni
 
 Every day, a fixed amount of DTC tokens are allocated to the network reward fund, commonly called the "reward pool." Each day Avalon blockchain prints new DTC's and the amount of DTC printed gets distributed to the users. You can either post or curate content to get certain amount of DTC from reward pool according to your stake. It is a stake based system and the more DTC you hold the more ability to print DTC you will have with your votes. Whenever you claim your rewards you will get your share from the reward pool. 
 
-<center>
-  
-![](https://github.com/dtube/docs/blob/master/imgs/dtubebeneficiary.png?raw=true)
-
-</center>
+<p align="center">
+  <img src="https://github.com/dtube/docs/blob/master/imgs/dtubebeneficiary.png?raw=true" />
+</p>
 
 DTube also takes what is called a [beneficiary reward](/wiki/faq/does-dtube-take-beneficiary-rewards), worth 10% of the inflation.
 

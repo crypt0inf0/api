@@ -7,7 +7,9 @@ equires you to convert your video files to a web compatible format before sharin
  
 ### Uploading with third party URL
 
-<center>![](https://i.imgur.com/4Gf6hsB.png)</center>
+<p align="center">
+  <img src="docs/imgs/storage/4Gf6hsB.png" />
+</p>
 
 Third party video providers is a great way to ensure that your video is watchable at highest qualities. It's never a bad thing to add a third party video source.
 If you want to share a non-original video on DTube, this is the recommended way, as it will reward the original creator registered on these third party websites.
