@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="">    
     <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
@@ -65,28 +65,35 @@
 
       <!-- Right side content -->
       <div id="right-content">
+        <section id="overview">
+          <zero-md src="docs/README.md"></zero-md>
+        </section>
         <section id="debian">
-          <zero-md src="markdown/debian.md"></zero-md>
+          <zero-md src="docs/install/debian.md"></zero-md>
         </section>
 
         <section id="docker">
-          <zero-md src="markdown/docker.md"></zero-md>
+          <zero-md src="docs/install/docker.md"></zero-md>
         </section>
 
         <section id="windows">
-          <zero-md src="markdown/windows.md"></zero-md>
+          <zero-md src="docs/install/windows.md"></zero-md>
         </section>
 
         <section id="genesis">
-          <zero-md src="markdown/genesis.md"></zero-md>
+          <zero-md src="docs/faq/genesis.md"></zero-md>
         </section>
 
         <section id="syncing">
-          <zero-md src="markdown/syncing.md"></zero-md>
+          <zero-md src="docs/faq/syncing.md"></zero-md>
         </section>
 
         <section id="leader">
-          <zero-md src="markdown/leader.md"></zero-md>
+          <zero-md src="docs/faq/leader.md"></zero-md>
+        </section>
+
+        <section id="contact">
+          <zero-md src="docs/contact-us.md"></zero-md>
         </section>
       </div>
     </div>
@@ -114,6 +121,10 @@
     });
     });
   </script> -->
+  
+  <script>
+    location.hash = "overview";
+  </script>
 
   <script>
     var a = document.getElementById('nav_link').getElementsByClassName('active_link');

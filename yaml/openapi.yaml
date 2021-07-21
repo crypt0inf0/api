@@ -1,7 +1,15 @@
 openapi: 3.0.0
 info:
   title: Dtube
-  description: Avalon node http/https API endpoint for developers
+  description: "Avalon node http/https API endpoint for developers ![](https://i.ibb.co/v3Yt03v/todo-api-background.png)
+\n\n## \U0001F4AB Overview\n\n
+Dtube API provides a decentralized video sharing platform, As **social media platforms can't be trusted anymore**. Their inability to **moderate content** efficiently, **protect user privacy** and operate with transparency broke the trust with users. The **targeted advertising model** requires to ever increase **personal data collection, ad pressure** and promote content **virality over quality** through suggestion algorithms. Checkout our [GitHub repo](https://github.com/dtube).
+
+\n\n### \U0001F9F0 Cross-Origin Resource Sharing\n
+Dtube supports peer-to-peer content sharing via [BTFS](http://bfts "BTFS"), [Skynet](http://skynet "Skynet"), [IPFS](http://IPFS "IPFS") & Third party application like Twitch, Youtube, Dailymotion, Instagram, Liveleak, Vimo, Facebook. Checkout [upload](https://d.tube/#!/publish "upload") section.
+  
+\n\n### \U0001F3C1 Roadmap\n
+Coming Soon!"
   version: 1.0.0
 servers:
   - url: 'https://avalon.d.tube'
