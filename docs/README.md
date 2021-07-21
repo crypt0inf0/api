@@ -2,24 +2,24 @@
 
 ## FAQ
 
--  [Glossary](/wiki/faq/glossary)
--  [How does DTube Work?](/wiki/faq/how-does-dtube-work)
--  [How do I use DTube ?](/wiki/faq/how-do-i-use-dtube)
--  [How does token economy works?](/wiki/faq/how-does-token-economy-works)
--  [Where does the money come from?](/wiki/faq/where-does-the-money-come-from)
--  [Why is DTube uncensorable?](/wiki/faq/why-is-dtube-uncensorable)
--  [Does DTube take beneficiary rewards?](/wiki/faq/does-dtube-take-beneficiary-rewards)
--  [How do videos get ranked?](/wiki/faq/how-do-videos-get-ranked)
--  [Can I change my account name?](/wiki/faq/can-i-change-my-account-name)
--  [Can I publish NSFW content?](/wiki/faq/can-i-publish-nsfw-content)
--  [I lost my key what can I do?](/wiki/faq/i-lost-my-key-what-can-i-do)
--  [How can I create lesser authority keys?](/wiki/faq/how-can-i-create-lesser-authority-keys)
--  [How can I add cover image and avatar?](/wiki/faq/how-can-i-add-cover-image-and-avatar)
--  [How can I give feedback?](/wiki/faq/giving-feedback)
--  [What is a leader and how to vote leaders?](/wiki/leaders)
--  [How can I embed a DTube video on my own website?](wiki/faq/how-can-i-embed-a-dtube-video-on-my-own-website)
--  [How does burning mechanism works on DTube?](wiki/faq/how-does-token-burning-mechanism-work-on-dtube)
--  [How to use Uniswap to trade DTube Coin?](wiki/faq/uniswap)
+-  [Glossary](https://github.com/dtube/docs/blob/master/faq/glossary.md)
+-  [How does DTube Work?](https://github.com/dtube/docs/blob/master/faq/how-does-dtube-work.md)
+-  [How do I use DTube ?](https://github.com/dtube/docs/blob/master/faq/how-do-i-use-dtube.md)
+-  [How does token economy works?](https://github.com/dtube/docs/blob/master/faq/how-does-token-economy-works.md)
+-  [Where does the money come from?](https://github.com/dtube/docs/blob/master/faq/where-does-the-money-come-from.md)
+-  [Why is DTube uncensorable?](https://github.com/dtube/docs/blob/master/faq/why-is-dtube-uncensorable.md)
+-  [Does DTube take beneficiary rewards?](https://github.com/dtube/docs/blob/master/faq/does-dtube-take-beneficiary-rewards.md)
+-  [How do videos get ranked?](https://github.com/dtube/docs/blob/master/faq/how-do-videos-get-ranked.md)
+-  [Can I change my account name?](https://github.com/dtube/docs/blob/master/faq/can-i-change-my-account-name.md)
+-  [Can I publish NSFW content?](https://github.com/dtube/docs/blob/master/faq/can-i-publish-nsfw-content.md)
+-  [I lost my key what can I do?](https://github.com/dtube/docs/blob/master/faq/i-lost-my-key-what-can-i-do.md)
+-  [How can I create lesser authority keys?](https://github.com/dtube/docs/blob/master/faq/how-can-i-create-lesser-authority-keys.md)
+-  [How can I add cover image and avatar?](https://github.com/dtube/docs/blob/master/faq/how-can-i-add-cover-image-and-avatar.md)
+-  [How can I give feedback?](https://github.com/dtube/docs/blob/master/faq/giving-feedback.md)
+-  [What is a leader and how to vote leaders?](https://github.com/dtube/docs/blob/master/leaders.md)
+-  [How can I embed a DTube video on my own website?](https://github.com/dtube/docs/blob/master/faq/how-can-i-embed-a-dtube-video-on-my-own-website.md)
+-  [How does burning mechanism works on DTube?](https://github.com/dtube/docs/blob/master/faq/how-does-token-burning-mechanism-work-on-dtube.md)
+-  [How to use Uniswap to trade DTube Coin?](https://github.com/dtube/docs/blob/master/faq/uniswap.md)
 
 ## Vision for DTube
 
@@ -46,7 +46,7 @@
 <img src="https://raw.githubusercontent.com/dtube/docs/master/imgs/fairplatform.png" align="left" width="8%"/>
 <p style="margin-left: 60px; padding: 16px 0; font-size: 24px;">No hidden algorithms</p>
 <br clear="left"/>
-<p>On DTube, there are no "secret forces" controlling the visibility and/or monetization of certain videos over others. **The content [ranking](wiki/video-rankings) is decided by the community**. Also: all of DTube's data is public, so it can be analyzed by anyone.</p>
+<p>On DTube, there are no "secret forces" controlling the visibility and/or monetization of certain videos over others. **The content [ranking](https://github.com/dtube/docs/blob/master/video-rankings.md) is decided by the community**. Also: all of DTube's data is public, so it can be analyzed by anyone.</p>
 </div>
 <br clear="left"/>
 
@@ -74,9 +74,9 @@ Note for Steem and Hive users: by logging with your Steem/Hive credentials you c
 <h2>Using decentralized File Storage</h2>
 
 <p float="left">
-  <a href="wiki/ipfs"><img src="https://raw.githubusercontent.com/dtube/production/master/DTube_files/images/logos/ipfs.png" alt="IPFS" style="width:15%"></a> &nbsp;
-  <a href="wiki/btfs"> <img src="https://raw.githubusercontent.com/dtube/docs/master/imgs/filestorage/btfslogo.png" alt="BTFS" style="width:15%"></a> &nbsp;
-  <a href="wiki/skynet"> <img src="https://raw.githubusercontent.com/dtube/production/master/DTube_files/images/logos/sia.svg" alt="SKYNET" style="width:15%"></a>
+  <a href="https://github.com/dtube/docs/blob/master/faq/ipfs.md"><img src="https://raw.githubusercontent.com/dtube/production/master/DTube_files/images/logos/ipfs.png" alt="IPFS" style="width:15%"></a> &nbsp;
+  <a href="https://github.com/dtube/docs/blob/master/faq/btfs.md"> <img src="https://raw.githubusercontent.com/dtube/docs/master/imgs/filestorage/btfslogo.png" alt="BTFS" style="width:15%"></a> &nbsp;
+  <a href="https://github.com/dtube/docs/blob/master/faq/skynet.md"> <img src="https://raw.githubusercontent.com/dtube/production/master/DTube_files/images/logos/sia.svg" alt="SKYNET" style="width:15%"></a>
 </p>
 
 #### 3rd parties
@@ -99,9 +99,9 @@ The recommended way is to use decentralised upload methods: IPFS, BTFS and Skyne
 
 ### How to contribute
 
-DTube is fully [open-source software](https://opensource.org/osd). And since open-source projects form the foundation for our rapidly advancing technological world, we want to make it as easy as possible for DTube users to become DTube contributors. See our [contribution guide](wiki/contribute) to learn how you can help the project.
+DTube is fully [open-source software](https://opensource.org/osd). And since open-source projects form the foundation for our rapidly advancing technological world, we want to make it as easy as possible for DTube users to become DTube contributors. See our [contribution guide](https://github.com/dtube/docs/blob/master/contribute.md) to learn how you can help the project.
 
-You can also [contribute to the documentation](wiki/contribute-to-docs).
+You can also [contribute to the documentation](https://github.com/dtube/docs/blob/master/contribute-to-docs.md).
  
 ### Using the DTube logo on your own project
 
