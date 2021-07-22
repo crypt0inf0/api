@@ -1,4 +1,4 @@
-## Vision for DTube
+## DTube Vision
 
 **DTube aims to reinvent how information and revenue is shared in the video industry.** We want a platform that promotes freedom of speech, by saying a hard *No!* to various mechanisms of censorship. We want all creators to be treated equally and fairly so they can make content accessible for everyone around the world.
 
