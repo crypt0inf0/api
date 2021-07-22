@@ -6,7 +6,7 @@ You can also burn **DTC** to **promote** your videos  all the DTC used in this p
 Promoting content will provide more exposure and that may lead to getting more rewards on the video - if it is proved to
 be a successful piece of content.
 
-<p align="center">
+<p align="left">
   <img src="docs/imgs/economy/QUpoNy7.png" />
 </p>
 
@@ -16,7 +16,7 @@ You can generate rewards in Dtube without any time boundries, however inbetween 
 
 #### You can claim your rewards whenever you want
 
-<p align="center">
+<p align="left">
   <img src="docs/imgs/economy/9YZtg5K.png" />
 </p>
 
@@ -27,7 +27,7 @@ This 7 day period is really essential for healthy economy and it gives opportuni
 
 Every day, a fixed amount of DTC tokens are allocated to the network reward fund, commonly called the "reward pool." Each day Avalon blockchain prints new DTC's and the amount of DTC printed gets distributed to the users. You can either post or curate content to get certain amount of DTC from reward pool according to your stake. It is a stake based system and the more DTC you hold the more ability to print DTC you will have with your votes. Whenever you claim your rewards you will get your share from the reward pool. 
 
-<p align="center">
+<p align="left">
   <img src="https://github.com/dtube/docs/blob/master/imgs/dtubebeneficiary.png?raw=true" />
 </p>
 

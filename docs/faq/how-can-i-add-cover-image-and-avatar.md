@@ -2,7 +2,7 @@
 
 You need to have a DTube account and log in with it, then you need to go to **My Channel** and go in to **ABOUT** section, finally click the red **EDIT** button.
 
-<p align="center">
+<p align="left">
   <img src="docs/imgs/avatar/43DWatQ.png" />
 </p>
 

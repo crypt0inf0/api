@@ -18,18 +18,18 @@ If you are not involved with Cryptocurrencies before don't feel overwhelmed its 
 **Step 1:** : You need to create an account first go to https://ionomy.com/ and hit Sign up
 
 
-<p align="center">
+<p align="left">
   <img src="docs/imgs/ionomy/cc2SNn3.png" />
 </p>
 
 
 **Step 2:** After you login to your account go to your wallet and get a wallet adress for cryptocurrency you want to transfer to Ionomy in this case we will use **Bitcoin**
 
-<p align="center">
+<p align="left">
   <img src="docs/imgs/ionomy/83ye41S.png" />
 </p>
 
-<p align="center">
+<p align="left">
   <img src="docs/imgs/ionomy/fMKrYL4.png" />
 </p>
 
@@ -49,7 +49,7 @@ After clicking the button you will receive a Bitcoin adress dedicated to your ac
 **Step 4:** After you check asks and bids leave a bid order or directly buy the lowest ask by filling this.
 
 
-<p align="center">
+<p align="left">
   <img src="docs/imgs/ionomy/zi8WpSt.png" />
 </p>
 
@@ -59,19 +59,19 @@ After confirming your order you should receive your Dtube coins in your wallet i
 
 **Step 5:** If you want to transfer Dtube coins you got, you need to go to your Dtube Ionomy wallet and press **send** button.
 
-<p align="center">
+<p align="left">
   <img src="docs/imgs/ionomy/qpFVpxY.png" />
 </p>
 
 **Step 6:** Fill the recipient adress with your Dtube account name (Not Steem or Hive name it should be your Avalon account)
 
-<p align="center">
+<p align="left">
   <img src="docs/imgs/ionomy/D9gaV7X.png" />
 </p>
 
 After you filled the form correctly press send button and you will receive an Email about confirmation of your transaction.
 
-<p align="center">
+<p align="left">
   <img src="docs/imgs/ionomy/OTcYkRv.png" />
 </p>
 

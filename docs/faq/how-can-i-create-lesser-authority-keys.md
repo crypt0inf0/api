@@ -2,7 +2,7 @@
 
 In order a create a custom key, you need to enter your **channel** then go into **keys**
 
-<p align="center">
+<p align="left">
   <img src="docs/imgs/keys/wT9WoWt.png" />
 </p>
 

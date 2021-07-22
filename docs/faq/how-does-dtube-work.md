@@ -8,7 +8,7 @@ Because we want D.Tube to be truly decentralized, we cannot have a server runnin
 
  **Using IPFS as a static file storage**
 
-<p align="center">
+<p align="left">
   <img src="docs/imgs/dtube/uDThjEm.png" />
 </p>
 

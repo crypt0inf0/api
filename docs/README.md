@@ -1,26 +1,3 @@
-# DTube Documentation
-
-## FAQ
-
--  [Glossary](#glossary)
--  [How does DTube Work?](#how-does-dtube-work)
--  [How do I use DTube ?](#how-do-i-use-dtube)
--  [How does token economy works?](#how-does-token-economy-works)
--  [Where does the money come from?](#where-does-the-money-come-from)
--  [Why is DTube uncensorable?](#why-is-dtube-uncensorable)
--  [Does DTube take beneficiary rewards?](#does-dtube-take-beneficiary-rewards)
--  [How do videos get ranked?](#how-do-videos-get-ranked)
--  [Can I change my account name?](#can-i-change-my-account-name)
--  [Can I publish NSFW content?](#can-i-publish-nsfw-content)
--  [I lost my key what can I do?](#i-lost-my-key-what-can-i-do)
--  [How can I create lesser authority keys?](#how-can-i-create-lesser-authority-keys)
--  [How can I add cover image and avatar?](#how-can-i-add-cover-image-and-avatar)
--  [How can I give feedback?](#giving-feedback)
--  [What is a leader and how to vote leaders?](#leaders)
--  [How can I embed a DTube video on my own website?](#how-can-i-embed-a-dtube-video-on-my-own-website)
--  [How does burning mechanism works on DTube?](#how-does-token-burning-mechanism-work-on-dtube)
--  [How to use Uniswap to trade DTube Coin?](#uniswap)
-
 ## Vision for DTube
 
 **DTube aims to reinvent how information and revenue is shared in the video industry.** We want a platform that promotes freedom of speech, by saying a hard *No!* to various mechanisms of censorship. We want all creators to be treated equally and fairly so they can make content accessible for everyone around the world.

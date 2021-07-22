@@ -4,7 +4,7 @@ Leaders are the backbone of the DTube project. Leaders run the node server that 
 
 ### How to vote leaders
 
-<p align="center">
+<p align="left">
   <img src="docs/imgs/leaders/iuATj3O.png" />
 </p>
 

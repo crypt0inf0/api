@@ -7,7 +7,7 @@ equires you to convert your video files to a web compatible format before sharin
  
 ### Uploading with third party URL
 
-<p align="center">
+<p align="left">
   <img src="docs/imgs/storage/4Gf6hsB.png" />
 </p>
 

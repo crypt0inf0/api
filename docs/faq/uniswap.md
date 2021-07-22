@@ -3,7 +3,7 @@
 Uniswap is a decentralized exchange in the for mof two smart contracts hosted on the Ethereum Blockchain.
 Uniswap is 100 percent on chain market maker that allows people swap  ERC20 tokens as well as ETH to an ERC20 or the other way.
 
-<p align="center">
+<p align="left">
   <img src="docs/imgs/uniswap/aUpWefG.png" />
 </p>
 
@@ -11,7 +11,7 @@ Uniswap is 100 percent on chain market maker that allows people swap  ERC20 toke
 
 Go to **MetaMask.io** and select from Android or iOS for mobile application and select Chrome for desktop. You can also go directly to the Chrome store, Google Play store.
 
-<p align="center">
+<p align="left">
   <img src="docs/imgs/uniswap/m1WxcXt.png" />
 </p>
 
@@ -19,13 +19,13 @@ Go to **MetaMask.io** and select from Android or iOS for mobile application and 
 
  Go to your Dtube channel by clicking your profile and click the Connect metamask button to connect your Metamask
 
-<p align="center">
+<p align="left">
   <img src="docs/imgs/uniswap/DV7YOGq.png" />
 </p>
 
 You need to give permission to Dtube app to use your wallet and receive an approval signature to your metamask.
 
-<p align="center">
+<p align="left">
   <img src="docs/imgs/uniswap/DqP4MMP.png" />
 </p>
 
@@ -35,7 +35,7 @@ After you connect Metamask you will be able to do Dtube to Dtube(ETH) to . You c
 
 Go to https://app.uniswap.org/#/swap and  you will see the same connect wallet button and need to give signature to permission request.
 
-<p align="center">
+<p align="left">
   <img src="docs/imgs/uniswap/JXW4UD3.png" />
 </p>
 
@@ -47,7 +47,7 @@ Now you are connected to uniswap and you will be able to swap tokens or Ethereum
 
 Inorder to do this you need to click select tokens and see the officially listed on Uniswap, However for Dtube or any other token you need to add the correct contract adress related to the token. 
 
-<p align="center">
+<p align="left">
   <img src="docs/imgs/uniswap/QjCdnmH.png" />
 </p>
 
@@ -55,13 +55,13 @@ Inorder to do this you need to click select tokens and see the officially listed
 
 Don't forget to add coin with this adress it will make your future transactions much easier.
 
-<p align="center">
+<p align="left">
   <img src="docs/imgs/uniswap/DaYe3wo.png" />
 </p>
 
 **Step 5:** After you succesfully import the Dtube Coin on Uniswap you will be able to swap it to Ethereum or swap your ethereum to Dtube coin.
 
-<p align="center">
+<p align="left">
   <img src="docs/imgs/uniswap/WK8wYv0.png" />
 </p>
 
@@ -69,13 +69,13 @@ You can see the corresponding price, fees and all the other details in the swap 
 
 **Step 6:** Once you check the details you are ready to Confirm the swap.
 
-<p align="center">
+<p align="left">
   <img src="docs/imgs/uniswap/0YMlxIa.png" />
 </p>
 
 **Step 7:**
 
-<p align="center">
+<p align="left">
   <img src="docs/imgs/uniswap/nGhImqv.png" />
 </p>
 
@@ -83,7 +83,7 @@ You will receive a notification on Metamask to confirm this transaction and you 
 
 **Transfering Wrapped Dtube Coin to Avalon**
 
-<p align="center">
+<p align="left">
   <img src="docs/imgs/uniswap/l8Y6PkL.png" />
 </p>
 
@@ -97,19 +97,19 @@ liquidity pools basically are, the pools of tokens that sit in smart contracts, 
 
 **Step: 1:** Click pool and add Liquidity
 
-<p align="center">
+<p align="left">
   <img src="docs/imgs/uniswap/zEjoWGA.png" />
 </p>
 
 **Step 2:** Choose the token and pool you want to provide liquidity for.
 
-<p align="center">
+<p align="left">
   <img src="docs/imgs/uniswap/ZqmNWsJ.png" />
 </p>
 
 After you click supply the process will send a confirmation to your metamask and it should be all fine.
 
-<p align="center">
+<p align="left">
   <img src="docs/imgs/uniswap/PnFFSQ2.png" />
 </p>
 

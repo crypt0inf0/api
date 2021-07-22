@@ -3,20 +3,20 @@
  If you want to give likes, write comments or upload your own videos, you need a Dtube account.  In order to create an account go to [account creation page](https://signup.d.tube/) and follow the registration steps.
 Once your account is open, you can login to D.Tube by entering the username and your private key and you can also login to your Hive or Steem account to benefit from interoperability features of Dtube. You can either login with Keychain or private key. Inorder to find your private key you can follow these steps.
 
-<p align="center">
+<p align="left">
   <img src="docs/imgs/dtube/DZxGxQ1.png" />
 </p>
 
 <div class="alert alert-info"><b>Attention:</b> The key that is shown before you clicked on <b>SHOW PRIVATE KEY</b> (3) is just a placeholder.</div>
 
-<p align="center">
+<p align="left">
   <img src="docs/imgs/dtube/NLct3Ds.png" />
 </p>
 
 You can login with Dtube/Hive/Steem accounts and easily navigate between them.
 
 ### Uploading a Video
-<p align="center">
+<p align="left">
   <img src="docs/imgs/dtube/lBY8qaq.png" />
 </p>
 There are 3 upload methods which Dtube provides for video uploads. Each individual upload method serves to a different purpose

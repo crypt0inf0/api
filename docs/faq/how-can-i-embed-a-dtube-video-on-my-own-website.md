@@ -4,7 +4,7 @@ Embed is a snippet of code that you can use on your website to display videos. I
 
 If you want to embed a Dtube video its really simple go to any video you would like to host and click **share** button.
 
-<p align="center">
+<p align="left">
   <img src="docs/imgs/embed/6ireabC.png" />
 </p>
 

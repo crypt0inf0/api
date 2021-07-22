@@ -6,7 +6,7 @@ You can also burn **DTC** to **promote** your videos  all the DTC used in this p
 Promoting content will provide more exposure and that may lead to getting more rewards on the video - if it is proved to
 be a successful piece of content.
 
-<p align="center">
+<p align="left">
   <img src="docs/imgs/economy/QUpoNy7.png" />
 </p>
 
@@ -16,7 +16,7 @@ You can generate rewards in Dtube without any time boundries, however inbetween 
 
 #### You can claim your rewards whenever you want
 
-<p align="center">
+<p align="left">
   <img src="docs/imgs/economy/9YZtg5K.png" />
 </p>
 

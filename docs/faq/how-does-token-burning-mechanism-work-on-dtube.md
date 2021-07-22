@@ -4,7 +4,7 @@ Burning is an important aspect to create an healthy  [token economics](wiki/toke
 
 ### Promoting your content by burning tokens
 
-<p align="center">
+<p align="left">
   <img src="docs/imgs/burn/D9Xg1aT.png" />
 </p>
 

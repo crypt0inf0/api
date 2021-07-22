@@ -1,7 +1,7 @@
 ### Transaction fee Calculation
 
 
-<p align="center">
+<p align="left">
   <img src="docs/imgs/swap/gVWUjDl.png" />
 </p>
  

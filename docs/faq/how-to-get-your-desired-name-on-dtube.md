@@ -25,7 +25,7 @@ All the tokens you spent on account creation will be burned and be permenantly o
 
 **Step 3**  Generate keys by clicking the generate button and save them somewhere secure. **Keep in mind that your account is only yours and immutable if you lose your keys there is nothing we can do.**
 
-<p align="center">
+<p align="left">
   <img src="docs/imgs/username/KM5MsSA.png" />
 </p>
 
@@ -46,7 +46,7 @@ All the tokens you spent on account creation will be burned and be permenantly o
 
 **Step 1:** Go to https://signup.d.tube/ and get yourself a free account.
 
-<p align="center">
+<p align="left">
   <img src="docs/imgs/username/MixBZz6.png" />
 </p>
 
