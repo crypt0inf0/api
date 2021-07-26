@@ -2,7 +2,8 @@
 
 -  [Glossary](#glossary)
 -  [How does DTube Work?](#how-does-dtube-work)
--  [How do I use DTube ?](#how-do-i-use-dtube)
+-  [How do I use DTube?](#how-do-i-use-dtube)
+-  [Why there's no viwer count?](#why-there-is-no-viewer-count)
 -  [How does token economy works?](#how-does-token-economy-works)
 -  [Where does the money come from?](#where-does-the-money-come-from)
 -  [Why is DTube uncensorable?](#why-is-dtube-uncensorable)
